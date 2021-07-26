@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'apple';
+    src: url("../fonts/AppleSDGothicNeo.ttc");
+}
+
+body{
+    margin:0;
+    background-color: black;
+    color:white;
+    font-family: 'apple';
+}
+
+div{
+    /* border: 1px white solid; */
+}
+
+header.nav{
+    width:100%;
+    height:144px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+    .nav a{
+        text-decoration: none;
+    }
+
+    .nav-container{
+        display:grid;
+        grid-template-columns: 100px 1fr;
+        height:100%;
+    }
+
+    .nav-item{
+        text-align: right;
+        font: 10pt;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 20px;
+    }
+
+    .nav-item.logo{
+        text-align: left;
+        margin-left: 130px;
+    }
+
+    /* logo color change animation */
+    #logo-color-change img{animation: red-to-white 2s forwards;}
+        @keyframes red-to-white{from{filter:none;}to{filter:brightness(0) invert(1);}}
+    #logo-color-change img:hover{animation: white-to-red 0.5s forwards;}
+        @keyframes white-to-red{from{filter:brightness(0) invert(1);}to{filter:none;}}
+
+    /* navigation item that contains link items */
+    .nav-item.links{margin-right:110px;}
+    .nav-item.active{color:white;}
+    /* navigation items hover animation */
+    .nav-item.inactive{animation: mouse-off-nav-item 2s forwards;}
+        @keyframes mouse-off-nav-item{from{color:white;}to{color:gray;}}
+    .nav-item.inactive:hover{animation: mouse-on-nav-item 0.5s forwards;}
+        @keyframes mouse-on-nav-item{from{color:gray;}to{color:white;}}
+
+
+.main-container{
+    /* should be same as .nav-item.logo 'width' attribute */
+    margin-left:130px;
+    margin-right:130px;
+}
+
+    .courier-new{
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .courier-new a{
+        text-decoration: none;
+        color:white;
+    }
+
+    .courier-new h2 li{
+        margin-bottom: 20px;
+    }
+
+    h1{
+        display: block;
+        font-size:2em;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.2em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+        
+
+    h3{
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: normal;
+        color:#888888
+    }
+        h3.me-explanation{
+            animation: gray-black-toggle 1s alternate; 
+            animation-iteration-count: infinite;
+            animation-delay: -2s
+        }
+            @keyframes gray-black-toggle{
+                0%{color:#D7322D}
+                50%{color:#888888}
+                100%{color:#000000}
+            }
+
+
+    /* college import success - fail text */
+    #randomResult{color:black;}
+
+@media(max-width: 630px){
+    /* nav bar */
+    .nav-container{grid-template-columns: 1fr;}
+    .nav-item{
+        margin-left:0 !important;
+        margin-right:0 !important;
+        text-align: center !important;
+    }
+    .nav-item.logo{
+        margin-top: 62.5px;
+    }
+    header.nav{
+        height:200px;
+    }
+    div.nav-item.links span{
+        display:block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    /* body texts*/
+}
+
+frequently used

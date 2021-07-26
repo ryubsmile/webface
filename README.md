@@ -1,7 +1,6 @@
 # my-face
 About ME
 
-
 Tech Stack:
 - HTML
 - CSS
