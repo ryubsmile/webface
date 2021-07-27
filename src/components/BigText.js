@@ -3,15 +3,13 @@ import './BigText.css';
 
 const BigText = (props) => {
   
-  let [title="NoTitleException e", sub=""] = [props.title, props.sub];
+  let [title="NoTitleException e", content_above=""] = [props.title, props.content_above];
   
-  // debugger;
+
   return (
-    <div className="pageMask">
-      <p>{sub}</p>
-      <h1 className="big-text">
-        {title}
-      </h1>
+    <div className="page-mask">
+      <p>{content_above}</p>
+      <h1 className="big-text">{title}</h1>
     </div>
   );
 };

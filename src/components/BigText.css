@@ -1,5 +1,13 @@
+div.page-mask{
+  height: 250px;
+  position: relative;
+}
+
 h1.big-text{
   font-size:10vw;
+  position: absolute;
+  bottom: 0px;
+  margin: 0px;
 }
 
 p{
