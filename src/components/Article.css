@@ -1,16 +1,16 @@
 div.main-container{
   /* background-color: greenyellow; */
   position: relative;
-  animation: transition 1s forwards;
-  animation-fill-mode: forwards;
+  /* animation: transition 1s forwards; */
+  /* animation-fill-mode: forwards; */
 }
 
 @keyframes transition {
   0%{
-    bottom: 100%;
+    left: 100%;
   }
 
   100%{
-    bottom: 0%;
+    left: 0%;
   }
 }
