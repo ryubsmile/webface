@@ -30,8 +30,8 @@ const Article = ({ slideIndex }) => {
     arrows: false,
     dots: false,
     draggable: false,
+    // adaptiveHeight: true,
     swipeToSlide: false,
-    adaptiveHeight: true,
   };
 
   return (
