@@ -1,8 +1,15 @@
-div.main-container{
+.main-container{
   /* background-color: greenyellow; */
   position: relative;
   /* animation: transition 1s forwards; */
   /* animation-fill-mode: forwards; */
+  margin-left:130px;
+  margin-right:130px;
+  margin-bottom:130px;
+}
+
+.slide-wrap{
+  margin-bottom: 100px;
 }
 
 @keyframes transition {

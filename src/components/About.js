@@ -3,7 +3,9 @@ import BigText from './BigText';
 
 const About = () => {
   return (
-    <BigText title="about();" sub="" />
+    <>
+      <BigText title="about();" sub="" />
+    </>
   );
 }
 

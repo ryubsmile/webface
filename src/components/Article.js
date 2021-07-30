@@ -6,50 +6,39 @@
  * DOES NOT AFFECT HEADER.
  */
 
-import React, { useEffect, useRef } from 'react';
-import Slider from 'react-slick';
-
+import React from 'react';
 import Home from './Home';
 import Works from './Works';
 import About from './About';
 import Contact from './Contact';
 import './Article.css';
 
-const Article = ({ slideIndex }) => {
-  const slider = useRef();
+const pageList = [
+  <Home />,
+  <Works />,
+  <About />,
+  <Contact />,
+];
 
-  useEffect(() => {
-    slider.current.slickGoTo(slideIndex);
-  }, [slideIndex]);
+const Article = () => {
 
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    easing: true,
-    arrows: false,
-    dots: false,
-    draggable: false,
-    // adaptiveHeight: true,
-    swipeToSlide: false,
-  };
+  let slides = [];
+
+  for(let i = 0; i < pageList.length; i ++){
+    slides[i] = <div className="slide-content" key={i}>{pageList[i]}</div>
+  }
 
   return (
-    <article>
-      <div className="main-container">
-        <Slider ref={slider} {...settings}>
-          <Home />
-          <Works />
-          <About />
-          <Contact />
-        </Slider>
+    <article className="main-container">
+      <div className="slide-wrap">
+        <div className="slide-box">
+          <div className="slide-list">
+            {slides}
+          </div>
+        </div>
       </div>
     </article>
   );
 }
-
-Article.defaultProps = {
-  slideIndex: 0,
-};
 
 export default Article;

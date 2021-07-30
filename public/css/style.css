@@ -5,6 +5,9 @@
 
 html, body{
   user-select: none;
+  margin: 0;
+  outline: 0;
+  padding: 0;
   /* height: max-content; */
 }
 
@@ -19,11 +22,6 @@ div{
   /* border: 1px white solid; */
 }
 
-.main-container{
-  /* should be same as .nav-item.logo 'width' attribute */
-  margin-left:130px;
-  margin-right:130px;
-}
 
 .courier-new{
   font-family: 'Courier New', Courier, monospace;
