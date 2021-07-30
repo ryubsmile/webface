@@ -1,9 +1,7 @@
 # my-face
-About ME
+Who am I?
 
 Tech Stack:
 - HTML
 - CSS
-- JavaScript
-- React.js
-- React-Router
+- Vanilla JavaScript + React.js
