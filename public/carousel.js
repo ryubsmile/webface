@@ -29,7 +29,7 @@ const updateHeight = () => { slideBox.style.height = curSlide.clientHeight; }
 
 // sets the buttons working
 const setEventListeners = () => {
-  for(let i = 0; i < headerButtons.length; i++){
+  for(let i = 0; i < slideLen; i++){
     headerButtons[i].addEventListener('click', () => {
       slideList.style.transition = slideSpeed + "ms";
       slideList.style.transform = "translateX(-" + (slideWidth * i) + "px)";
@@ -40,7 +40,7 @@ const setEventListeners = () => {
   }
 
   const activate = (index) => {
-    for(let i = 0; i < headerButtons.length; i++){ headerButtons[i].children[0].className = (index === i)? "nav-item active" : "nav-item inactive"; }
+    for(let i = 0; i < slideLen; i++){ headerButtons[i].children[0].className = (index === i)? "nav-item active" : "nav-item inactive"; }
   };
 };
 
