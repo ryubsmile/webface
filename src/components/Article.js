@@ -7,24 +7,23 @@
  */
 
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Home from './Home';
-import Works from './Works';
-import About from './About';
-import Contact from './Contact';
 import './Article.css';
 
-const Article = () => (
-  <article>
-    <div className="main-container">
-      <BrowserRouter>
-        <Route exact path="/" component={Home} />
-        <Route path="/works" component={Works} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-      </BrowserRouter>
-    </div>
-  </article>
-);
+const Article = ( {pageList} ) => {
+  let slides = [];
+  for(let i = 0; i < pageList.length; i ++){ slides[i] = <div className="slide-content" key={i}>{pageList[i]}</div> }
+
+  return (
+    <article className="main-container">
+      <div className="slide-wrap">
+        <div className="slide-box">
+          <div className="slide-list">
+            {slides}
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default Article;

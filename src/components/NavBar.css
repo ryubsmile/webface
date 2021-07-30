@@ -1,0 +1,62 @@
+header.nav{
+  width:100%;
+  height:144px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.nav a{
+  text-decoration: none;
+}
+
+.nav button{
+  text-decoration: none;
+  background-color: black;
+  border: 0;
+  padding: 0;
+}
+.nav-container{
+  display:grid;
+  grid-template-columns: 100px 1fr;
+  height:100%;
+}
+
+.nav-item{
+  text-align: right;
+  font-size: 13pt;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+}
+
+.nav-item.logo{
+  text-align: left;
+  margin-left: 130px;
+}
+
+/* logo color change animation */
+#logo-color-change img{animation: red-to-white 2s forwards;}
+
+@keyframes red-to-white{from{filter:none;}to{filter:brightness(0) invert(1);}}
+
+#logo-color-change img:hover{animation: white-to-red 0.5s forwards;}
+
+@keyframes white-to-red{from{filter:brightness(0) invert(1);}to{filter:none;}}
+
+#logo-color-change img.active {
+  filter: none !important;
+  animation: none;
+}
+
+/* navigation item that contains link items */
+.nav-item.links{margin-right:110px;}
+
+.nav-item.active{color:white;}
+/* navigation items hover animation */
+.nav-item.inactive{animation: mouse-off-nav-item 2s forwards;}
+
+@keyframes mouse-off-nav-item{from{color:white;}to{color:gray;}}
+
+.nav-item.inactive:hover{animation: mouse-on-nav-item 0.5s forwards;}
+
+@keyframes mouse-on-nav-item{from{color:gray;}to{color:white;}}

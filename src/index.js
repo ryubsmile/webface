@@ -7,13 +7,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Article from './components/Article';
-import NavBar from './components/NavBar';
+import TopLevelContent from './components/TopLevelContent';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBar />
-    <Article />
+    <TopLevelContent />
   </React.StrictMode>,
   document.getElementById('root')
 );

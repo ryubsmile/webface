@@ -11,12 +11,12 @@ const lorem =  `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut et
 
 const Home = () => {
   const subContent = "import Highschool from ac.kis.highschool.class2022;"
-  // const;
+
   return (
-    <div>
+    <>
       <BigText title="Jaehyuk.ryu();" content_above={subContent}/>
       {lorem}
-    </div>
+    </>
   );
 }
 

@@ -3,7 +3,9 @@ import BigText from './BigText';
 
 const Works = () => {
   return (
-    <BigText title="works();" sub="" />
+    <>
+      <BigText title="works();" sub="" />
+    </>
   );
 }
 
