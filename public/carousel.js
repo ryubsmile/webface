@@ -9,22 +9,8 @@ window.onload = () => {
   slideBox = document.querySelector('.slide-box');
   headerButtons = document.querySelector('header').querySelectorAll('button')
   curSlide = slideContents[0];
-  updateWidth();
   updateHeight();
   setEventListeners();
-}
-
-window.onresize = () => { updateWidth(); }
-
-// gets width everytime it's changed. should be called everytime the client size changes.
-const updateWidth = () => { 
-  // the width every element refers to
-  slideWidth = document.querySelector('.main-container').clientWidth;
-  slideContentWidth = slideWidth - sidePadding * 2;
-
-  for(let i = 0; i < slideLen; i++){ slideContents[i].style.width = slideContentWidth; }
-  slideWrap.style.width = slideWidth;
-  slideList.style.width = slideWidth * slideLen + "px";
 }
 
 const updateHeight = () => { slideBox.style.height = curSlide.clientHeight; }
@@ -34,7 +20,7 @@ const setEventListeners = () => {
   for(let i = 0; i < slideLen; i++){
     headerButtons[i].addEventListener('click', () => {
       slideList.style.transition = slideSpeed + "ms";
-      slideList.style.transform = "translateX(-" + (slideWidth * i) + "px)";
+      slideList.style.transform = "translateX(-" + (document.querySelector('.main-container').clientWidth * i) + "px)";
       curSlide = slideContents[i];
       activate(i);
       updateHeight();
