@@ -10,8 +10,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Article.css';
 
 const sidePadding = 130; // pass as prop
+const slideSpeed = 300;
 
-const Article = ( {pageList} ) => {
+const Article = props => {
+  const pageList = props.pageList;
+  const slideIndex = props.slideIndex;
+
   const mainContainer = useRef();
   
   const [widths, setWidths] = useState(0);
@@ -28,19 +32,29 @@ const Article = ( {pageList} ) => {
     console.log('updatedWidth.');
   };
 
-  //on component update
+  //on component update / mount
   useEffect(() => {
     updateWidths(); 
     window.addEventListener('resize', updateWidths);
+    // when component unmounts.
     return () => {
       window.removeEventListener('resize', updateWidths);
     }
-  },[]); // remove
+  },[]); // bind an empty array to remove infinite rendering
 
-  const updateCss = (width) => {
-    return{
+  const updateCss = (width, slideIndex) => {
+    const css = {
       width: width + "px",
+    };
+
+    if(slideIndex === 0 || slideIndex){
+      css.transition = slideSpeed + "ms";
+      css.transform = "translateX(-" 
+                    + (widths.containerWidth * slideIndex) 
+                    + "px)";
     }
+
+    return css;
   };
 
   // craete slides in the slides var
@@ -61,14 +75,12 @@ const Article = ( {pageList} ) => {
       >
         <div className="slide-box">
           <div className="slide-list"
-               style={updateCss(widths.containerWidth * slides.length)}
+               style={updateCss(widths.containerWidth * slides.length, slideIndex)}
           >
             {slides}
           </div>
         </div>
       </div>
-      {/*  for testing */}
-      <button onClick={updateWidths}>hello</button>
     </article>
   );
 }
