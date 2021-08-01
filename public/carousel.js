@@ -1,4 +1,5 @@
 const slideSpeed = 300; // slide speed
+const sidePadding = 130;
 
 window.onload = () => {
   slideWrap = document.querySelector('.slide-wrap');
@@ -19,8 +20,9 @@ window.onresize = () => { updateWidth(); }
 const updateWidth = () => { 
   // the width every element refers to
   slideWidth = document.querySelector('.main-container').clientWidth;
+  slideContentWidth = slideWidth - sidePadding * 2;
 
-  for(let i = 0; i < slideLen; i++){ slideContents[i].style.width = slideWidth; }
+  for(let i = 0; i < slideLen; i++){ slideContents[i].style.width = slideContentWidth; }
   slideWrap.style.width = slideWidth;
   slideList.style.width = slideWidth * slideLen + "px";
 }

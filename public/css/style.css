@@ -69,10 +69,6 @@ h3.me-explanation{
     100%{color:#000000}
 }
 
-
-  /* college import success - fail text */
-  #randomResult{color:black;}
-
 @media(max-width: 630px){
   /* nav bar */
   .nav-container{grid-template-columns: 1fr;}
