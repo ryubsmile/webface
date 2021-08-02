@@ -10,34 +10,30 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Article.css';
 
 const sidePadding = 130; // pass as prop
-const slideSpeed = 300;
+const slideSpeed = 300; // slide animation speed in milliseconds
 
 const Article = props => {
-  const pageList = props.pageList;
-  const slideIndex = props.slideIndex;
-
+  const [pageList, slideIndex] = [props.pageList, props.slideIndex];
+  const [widths, setWidths] = useState(0);
   const mainContainer = useRef();
   
-  const [widths, setWidths] = useState(0);
-  
-  /*update and render width on 
-  1. first render
-  2. every time resize event happens : width changes.
-  */
+  /* update and render width for 
+  1. the first render
+  2. every time resize event happens : width changes. */
   const updateWidths = () => {
     setWidths({
       containerWidth: mainContainer.current.clientWidth,
       slideWidth: mainContainer.current.clientWidth - sidePadding * 2,
     });
-    console.log('updatedWidth.');
+    console.log('updatedWidth.'); // remove this after dev.
   };
 
-  //on component update / mount
+  //on component update || mount
   useEffect(() => {
     updateWidths(); 
     window.addEventListener('resize', updateWidths);
-    // when component unmounts.
     return () => {
+      // when component unmounts.
       window.removeEventListener('resize', updateWidths);
     }
   },[]); // bind an empty array to remove infinite rendering
@@ -75,7 +71,7 @@ const Article = props => {
       >
         <div className="slide-box">
           <div className="slide-list"
-               style={updateCss(widths.containerWidth * slides.length, slideIndex)}
+               style={updateCss(widths.containerWidth * slides.length + 20, slideIndex)} // 20 is just for when adding borders
           >
             {slides}
           </div>

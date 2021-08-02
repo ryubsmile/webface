@@ -1,9 +1,8 @@
 import React from 'react';
 import './BigText.css';
 
-const BigText = (props) => {
-  
-  let [title="NoTitleException e", content_above=""] = [props.title, props.content_above];
+const BigText = props => {
+  const [title="NoTitleException e", content_above=""] = [props.title, props.content_above];
 
   return (
     <div className="page-mask">
