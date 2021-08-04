@@ -3,13 +3,15 @@ import './NavBar.css';
 
 const NavBar = props => {
   // receive props
-  const pageList = props.pageList;
-  const slideIndex = props.slideIndex;
+  const [pageList, slideIndex] = [props.pageList, props.slideIndex];
 
   // function called when each nav button is clicked => fnc from parent toplevelcontent.js
   const setSlideIndex = selectedIndex => { 
     props.setSlideIndex(selectedIndex);
     updateHeight(selectedIndex);
+    // change url
+    window.history.replaceState(null,null, //
+      (selectedIndex === 0)? "/": pageList[selectedIndex].type.name.toLowerCase());
   };
 
   // update height according to the selected slide

@@ -17,9 +17,16 @@ const pageList = [
   <Contact />,
 ];
 
-const TopLevelContent = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
+const TopLevelContent = props => {
+  const url = props.url.toLowerCase().slice(1);
+  
+  // find out the index of pageList that corresponds to the url.
+  let urlDesiredSlideIndex = pageList.length;
+  while(urlDesiredSlideIndex-- > 0){
+    if(pageList[urlDesiredSlideIndex].type.name.toLowerCase() === url){ break; }
+  }
 
+  const [slideIndex, setSlideIndex] = useState(urlDesiredSlideIndex || 0);
   return(
     <>
       <NavBar pageList={pageList} 

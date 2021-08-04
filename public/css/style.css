@@ -3,11 +3,13 @@
   src: url("../fonts/AppleSDGothicNeo.ttc");
 }
 
-html, body{
+* {
   user-select: none;
   margin: 0;
   outline: 0;
   padding: 0;
+  text-decoration: none;
+  color: white;
   /* height: max-content; */
 }
 
@@ -19,7 +21,7 @@ body{
 }
 
 div{
-  /* border: 1px white solid; */
+  border: 1px white solid;
 }
 
 

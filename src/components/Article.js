@@ -12,8 +12,13 @@ import './Article.css';
 const sidePadding = 130; // pass as prop
 const slideSpeed = 300; // slide animation speed in milliseconds
 
+let isInitialLoad = 4; 
+/* 4 or above => initial load animation X
+   3 or below => initial load animation O */
+
 const Article = props => {
   const [pageList, slideIndex] = [props.pageList, props.slideIndex];
+  
   const [widths, setWidths] = useState(0);
   const mainContainer = useRef();
   
@@ -25,7 +30,6 @@ const Article = props => {
       containerWidth: mainContainer.current.clientWidth,
       slideWidth: mainContainer.current.clientWidth - sidePadding * 2,
     });
-    console.log('updatedWidth.'); // remove this after dev.
   };
 
   //on component update || mount
@@ -37,14 +41,19 @@ const Article = props => {
       window.removeEventListener('resize', updateWidths);
     }
   },[]); // bind an empty array to remove infinite rendering
-
+  
   const updateCss = (width, slideIndex) => {
     const css = {
       width: width + "px",
     };
-
+    
     if(slideIndex === 0 || slideIndex){
-      css.transition = slideSpeed + "ms";
+      if(isInitialLoad-- >= 0) {
+        css.transition = "0ms";
+      }else{
+        css.transition = slideSpeed + "ms";
+      }
+
       css.transform = "translateX(-" 
                     + (widths.containerWidth * slideIndex) 
                     + "px)";
