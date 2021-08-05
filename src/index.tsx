@@ -11,8 +11,7 @@ import ReactDOM from 'react-dom';
 import TopLevelContent from './components/TopLevelContent';
 
 const PageRouter = () => { 
-  const pathName = window.location.pathname;
-  // window.location.pathname="set";
+  const pathName: string = window.location.pathname;
   return (
     <TopLevelContent url={pathName} />
   );

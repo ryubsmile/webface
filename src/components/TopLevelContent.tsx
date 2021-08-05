@@ -1,33 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, ReactElement } from 'react';
 import NavBar from './NavBar';
 import Article from './Article';
 
 //-> article list start
-import Home from './pages/Home';
-import Works from './pages/Works';
-import About from './pages/About';
-import Contact from './pages/Contact';
-
+import Home from './Home';
+import Works from './Works';
+import About from './About';
+import Contact from './Contact';
 //<- article list end
 
 // add article to this object if adding one.
-const pageList = [
+const pageList: React.ReactComponentElement<any>[] = [
   <Home />,
   <Works />,
   <About />,
   <Contact />,
 ];
 
-const TopLevelContent = props => {
-  const url = props.url.toLowerCase().slice(1);
-  
-  // find out the index of pageList that corresponds to the url.
-  let urlDesiredSlideIndex = pageList.length;
+interface TypeProps{
+  url: string;
+}
+
+const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
+  const url: string = props.url.toLowerCase().slice(1);
+
+  let urlDesiredSlideIndex: number = pageList.length;
   while(urlDesiredSlideIndex-- > 0){
     if(pageList[urlDesiredSlideIndex].type.name.toLowerCase() === url){ break; }
   }
 
-  const [slideIndex, setSlideIndex] = useState(urlDesiredSlideIndex || 0);
+  const [slideIndex, setSlideIndex] = useState<number>(urlDesiredSlideIndex || 0);
   return(
     <>
       <NavBar pageList={pageList} 

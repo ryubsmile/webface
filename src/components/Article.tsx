@@ -5,30 +5,37 @@
  * THIS IS AN ARTICLE COMPONENT.
  * ANYTHING ON THIS SCRIPT DOES NOT AFFECT HEADER.
  */
-import React, { useState, useRef, useEffect } from 'react';
+
+import React, { useState, useRef, useEffect, ReactElement } from 'react';
 import './Article.css';
 
-const sidePadding = 130; // pass as prop
-const slideSpeed = 300; // slide animation speed in milliseconds
+const sidePadding: number = 130; // pass as prop later on for responsive design
+const slideSpeed: number = 300;
 
-let isInitialLoad = 4; 
-/* 4 or above => initial load animation X
-   3 or below => initial load animation O */
+interface TypeProps {
+  pageList: React.ReactComponentElement<any>[];
+  slideIndex: number;
+}
 
-const Article = props => {
-  const [pageList, slideIndex] = [props.pageList, props.slideIndex];
+const Article: React.FC<TypeProps> = (props): ReactElement => {
+  const [pageList, slideIndex] = [props.pageList, props.slideIndex]; //receive props
+  const mainContainer = useRef<HTMLElement>(null);
+
+  const [widths, setWidths] = useState({
+    containerWidth: 0,
+    slideWidth: 0,
+  });
   
-  const [widths, setWidths] = useState(0);
-  const mainContainer = useRef();
-  
-  /* update and render width for 
-  1. the first render
-  2. every time resize event happens : width changes. */
-  const updateWidths = () => {
-    setWidths({
-      containerWidth: mainContainer.current.clientWidth,
-      slideWidth: mainContainer.current.clientWidth - sidePadding * 2,
-    });
+  /*update and render width on 
+  1. first render
+  2. every time resize event happens : width changes.*/
+  const updateWidths = (): void => {
+    if(mainContainer.current){
+      setWidths({
+        containerWidth: mainContainer.current.clientWidth,
+        slideWidth: mainContainer.current.clientWidth - sidePadding * 2,
+      });
+    }
   };
 
   //on component update || mount
@@ -40,19 +47,17 @@ const Article = props => {
       window.removeEventListener('resize', updateWidths);
     }
   },[]); // bind an empty array to remove infinite rendering
-  
-  const updateCss = (width, slideIndex) => {
+
+  const updateCss = (width: number, slideIndex: number) => {
     const css = {
       width: width + "px",
+      transition: "",
+      transform: "",
     };
-    
-    if(slideIndex === 0 || slideIndex){
-      if(isInitialLoad-- >= 0) {
-        css.transition = "0ms";
-      }else{
-        css.transition = slideSpeed + "ms";
-      }
 
+    // for first page load, skip this.
+    if(slideIndex >= 0){
+      css.transition = slideSpeed + "ms";
       css.transform = "translateX(-" 
                     + (widths.containerWidth * slideIndex) 
                     + "px)";
@@ -66,7 +71,7 @@ const Article = props => {
   for(let i = 0; i < pageList.length; i ++){ 
     slides[i] = <div className="slide-content" 
                      key={i} 
-                     style={updateCss(widths.slideWidth)}
+                     style={updateCss(widths.slideWidth, -1)}
                 >
                   {pageList[i]}
                 </div> 
@@ -75,7 +80,7 @@ const Article = props => {
   return (
     <article className="main-container" ref={mainContainer}>
       <div className="slide-wrap" 
-      style={updateCss(widths.containerWidth)}
+      style={updateCss(widths.containerWidth, -1)}
       >
         <div className="slide-box">
           <div className="slide-list"
