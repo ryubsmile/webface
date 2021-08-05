@@ -2,16 +2,16 @@
  * Main, and topmost javascript file that shows all the components according to order.
  * 
  * If a component is somehow not connected to this script, 
- * it will not show up on the webpage no matter what.
+ * it will not show up on the website no matter what.
  */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import { BrowserRouter, Route, withRouter, useLocation } from 'react-router-dom';
 import TopLevelContent from './components/TopLevelContent';
 
 const PageRouter = () => { 
-  const pathName = window.location.pathname;
-
+  const pathName: string = window.location.pathname;
   return (
     <TopLevelContent url={pathName} />
   );

@@ -3,7 +3,7 @@
  * to show body content according to the link. 
  * 
  * THIS IS AN ARTICLE COMPONENT.
- * DOES NOT AFFECT HEADER.
+ * ANYTHING ON THIS SCRIPT DOES NOT AFFECT HEADER.
  */
 
 import React, { useState, useRef, useEffect, ReactElement } from 'react';
@@ -28,8 +28,7 @@ const Article: React.FC<TypeProps> = (props): ReactElement => {
   
   /*update and render width on 
   1. first render
-  2. every time resize event happens : width changes.
-  */
+  2. every time resize event happens : width changes.*/
   const updateWidths = (): void => {
     if(mainContainer.current){
       setWidths({
@@ -39,12 +38,12 @@ const Article: React.FC<TypeProps> = (props): ReactElement => {
     }
   };
 
-  //on component update / mount
+  //on component update || mount
   useEffect(() => {
     updateWidths(); 
     window.addEventListener('resize', updateWidths);
-    // when component unmounts.
     return () => {
+      // when component unmounts.
       window.removeEventListener('resize', updateWidths);
     }
   },[]); // bind an empty array to remove infinite rendering
@@ -85,7 +84,7 @@ const Article: React.FC<TypeProps> = (props): ReactElement => {
       >
         <div className="slide-box">
           <div className="slide-list"
-               style={updateCss(widths.containerWidth * slides.length, slideIndex)}
+               style={updateCss(widths.containerWidth * slides.length + 20, slideIndex)} // 20 is just for when adding borders
           >
             {slides}
           </div>

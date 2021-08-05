@@ -32,7 +32,7 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
   // update buttons and apply states
   let buttons = [];
   for(let i = 0; i < pageList.length; i++){
-    if(i === 0){
+    if(i === 0){ // only for the home page
       buttons[i] = <button key={i} id="logo-color-change" onClick={setSlideIndex.bind(null, i)}>
                      <img className={(i === slideIndex)? "nav-item active": "nav-item inactive"} 
                           src="images/fire-red.png" 
