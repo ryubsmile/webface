@@ -25,10 +25,10 @@ const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
   const url: string = props.url.toLowerCase().slice(1);
 
   let urlDesiredSlideIndex: number = pageList.length;
-  while(urlDesiredSlideIndex-- > 0){
+  while(--urlDesiredSlideIndex > 0){
     if(pageList[urlDesiredSlideIndex].type.name.toLowerCase() === url){ break; }
   }
-
+  
   const [slideIndex, setSlideIndex] = useState<number>(urlDesiredSlideIndex || 0);
   return(
     <>

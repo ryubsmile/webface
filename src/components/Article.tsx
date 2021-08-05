@@ -11,6 +11,10 @@ import './Article.css';
 
 const sidePadding: number = 130; // pass as prop later on for responsive design
 const slideSpeed: number = 300;
+let isInitialLoad: number = 4; 
+/* 4 or above => initial load animation X
+   3 or below => initial load animation O */
+
 
 interface TypeProps {
   pageList: React.ReactComponentElement<any>[];
@@ -57,7 +61,11 @@ const Article: React.FC<TypeProps> = (props): ReactElement => {
 
     // for first page load, skip this.
     if(slideIndex >= 0){
-      css.transition = slideSpeed + "ms";
+      if(isInitialLoad-- >= 0){
+        css.transition = "0ms";
+      }else{
+        css.transition = slideSpeed + "ms";
+      }
       css.transform = "translateX(-" 
                     + (widths.containerWidth * slideIndex) 
                     + "px)";

@@ -10,7 +10,7 @@ interface TypeProps {
 const NavBar: React.FC<TypeProps> = (props): ReactElement => {
   // receive props
   const [pageList, slideIndex, setSlideIndex] = [props.pageList, props.slideIndex, props.setSlideIndex];
-
+  
   // function called when each nav button is clicked => fnc from parent toplevelcontent.js
   function updateSlide(selectedIndex: number): void { 
     setSlideIndex(selectedIndex); // update state 
@@ -27,19 +27,19 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
     const selectedSlide: Element = document.querySelectorAll('.slide-content')[indexToGetHeight];
     slideBox.style.height = selectedSlide.clientHeight + "px"; 
   }
-  window.onload = () => { updateHeight(0); };
+  window.onload = () => { updateHeight(slideIndex); };
 
   // update buttons and apply states
   let buttons = [];
   for(let i = 0; i < pageList.length; i++){
-    if(i === 0){ // only for the home page
-      buttons[i] = <button key={i} id="logo-color-change" onClick={setSlideIndex.bind(null, i)}>
+    if(i === 0) { // only for the home page
+      buttons[i] = <button key={i} id="logo-color-change" onClick={updateSlide.bind(null, i)}>
                      <img className={(i === slideIndex)? "nav-item active": "nav-item inactive"} 
                           src="images/fire-red.png" 
                           alt="OOPS! REFRESH!" 
                           width="20px;" />
                    </button>
-    } else{
+    } else {
       buttons[i] = <button key={i} onClick={updateSlide.bind(null, i)}>
                      <span className={(i === slideIndex)? "nav-item active": "nav-item inactive"}>
                        {pageList[i].type.name.toUpperCase()}
