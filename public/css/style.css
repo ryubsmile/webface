@@ -21,7 +21,7 @@ body{
 }
 
 div{
-  border: 1px white solid;
+  /* border: 1px white solid; */
 }
 
 
@@ -89,8 +89,7 @@ h3.me-explanation{
       height:200px;
   }
 
-  .nav-item.links span{
-      display:block;
+  .nav-item.links button{
       margin-top: 10px;
       margin-bottom: 10px;
   }

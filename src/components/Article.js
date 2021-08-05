@@ -3,9 +3,8 @@
  * to show body content according to the link. 
  * 
  * THIS IS AN ARTICLE COMPONENT.
- * DOES NOT AFFECT HEADER.
+ * ANYTHING ON THIS SCRIPT DOES NOT AFFECT HEADER.
  */
-
 import React, { useState, useRef, useEffect } from 'react';
 import './Article.css';
 
