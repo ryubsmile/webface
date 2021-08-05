@@ -1,9 +1,8 @@
 import React from 'react';
 import BigText from '../BigText';
-import './Contact.css';
+import './Contact.css'
 
-
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <>
       <BigText title="contact();" content_above="" />
