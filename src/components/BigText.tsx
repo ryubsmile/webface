@@ -1,7 +1,13 @@
 import React from 'react';
+import { ReactElement } from 'react';
 import './BigText.css';
 
-const BigText = (props) => {
+interface GreetingsProps {
+  title: string;
+  content_above: string | null;
+}
+
+const BigText: React.FC<GreetingsProps> = (props): ReactElement => {
   
   let [title="NoTitleException e", content_above=""] = [props.title, props.content_above];
 

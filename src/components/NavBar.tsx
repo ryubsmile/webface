@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import './NavBar.css';
 
-const NavBar = props => {
-  // receive props
-  const pageList = props.pageList;
-  const slideIndex = props.slideIndex;
+interface GreetingsProps {
+  pageList: Array<React.ReactComponentElement<any>>;
+  slideIndex: number;
+  setSlideIndex: React.Dispatch<React.SetStateAction<number>>;
+}
 
+const NavBar: React.FC<GreetingsProps> = (props): ReactElement => {
+  // receive props
+  const [pageList, slideIndex, setSlideIndex] = [props.pageList, props.slideIndex, props.setSlideIndex];
+
+  
   // function called when each nav button is clicked => fnc from parent toplevelcontent.js
-  const setSlideIndex = selectedIndex => { 
-    props.setSlideIndex(selectedIndex);
+  function updateSlide(selectedIndex: number): void { 
+    setSlideIndex(selectedIndex);
     updateHeight(selectedIndex);
   };
-
+  
   // update height according to the selected slide
-  const updateHeight = indexToGetHeight => {
-    const slideBox = document.querySelector('.slide-box');
-    const selectedSlide = document.querySelectorAll('.slide-content')[indexToGetHeight];
-    slideBox.style.height = selectedSlide.clientHeight;
+  function updateHeight(indexToGetHeight: number): void{
+    const slideBox = document.querySelector('.slide-box') as HTMLElement;
+    const selectedSlide: Element = document.querySelectorAll('.slide-content')[indexToGetHeight];
+    slideBox.style.height = selectedSlide.clientHeight + "px"; 
   }
   window.onload = () => { updateHeight(0); };
 
@@ -31,14 +37,15 @@ const NavBar = props => {
                           width="20px;" />
                    </button>
     } else{
-      buttons[i] = <button key={i} onClick={setSlideIndex.bind(null, i)}>
+      buttons[i] = <button key={i} onClick={updateSlide.bind(null, i)}>
                      <span className={(i === slideIndex)? "nav-item active": "nav-item inactive"}>
                        {pageList[i].type.name.toUpperCase()}
                      </span>
                    </button>
     }
   }
-
+  // name type above
+  //debugger;
   return (
     <header className="nav">
       <div className="nav-container">

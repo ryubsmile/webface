@@ -1,10 +1,10 @@
 import React from 'react';
 import BigText from './BigText';
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <>
-      <BigText title="about();" sub="" />
+      <BigText title="about();" content_above={""} />
     </>
   );
 }

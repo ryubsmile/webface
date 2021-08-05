@@ -10,15 +10,15 @@ import Contact from './Contact';
 //<- article list end
 
 // add article to this object if adding one.
+const pageList: Array<React.ReactComponentElement<any>> = [
+  <Home />,
+  <Works />,
+  <About />,
+  <Contact />,
+];
 
-const TopLevelContent = () => {
-  const pageList = [
-    <Home />,
-    <Works />,
-    <About />,
-    <Contact />,
-  ];
-  const [slideIndex, setSlideIndex] = useState(0);
+const TopLevelContent: React.FC = () => {
+  const [slideIndex, setSlideIndex] = useState<number>(0);
 
   return(
     <>

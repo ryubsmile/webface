@@ -9,8 +9,8 @@ const lorem =  `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut et
                 Cumque qui voluptate et officiis tempore excepturi debitis eligendi labore architecto odio nisi repellendus 
                 numquam ipsam repudiandae tenetur iure modi, expedita odit quis iste doloribus?`;
 
-const Home = () => {
-  const subContent = "import Highschool from ac.kis.highschool.class2022;"
+const Home: React.FC = () => {
+  const subContent: string = "import Highschool from ac.kis.highschool.class2022;"
 
   return (
     <>
