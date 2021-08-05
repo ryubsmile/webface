@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ReactElement } from 'react';
 import NavBar from './NavBar';
 import Article from './Article';
 
@@ -10,16 +10,26 @@ import Contact from './Contact';
 //<- article list end
 
 // add article to this object if adding one.
-const pageList: Array<React.ReactComponentElement<any>> = [
+const pageList: React.ReactComponentElement<any>[] = [
   <Home />,
   <Works />,
   <About />,
   <Contact />,
 ];
 
-const TopLevelContent: React.FC = () => {
-  const [slideIndex, setSlideIndex] = useState<number>(0);
+interface TypeProps{
+  url: string;
+}
 
+const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
+  const url: string = props.url.toLowerCase().slice(1);
+
+  let urlDesiredSlideIndex: number = pageList.length;
+  while(urlDesiredSlideIndex-- > 0){
+    if(pageList[urlDesiredSlideIndex].type.name.toLowerCase() === url){ break; }
+  }
+
+  const [slideIndex, setSlideIndex] = useState<number>(urlDesiredSlideIndex || 0);
   return(
     <>
       <NavBar pageList={pageList} 

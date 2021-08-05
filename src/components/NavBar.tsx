@@ -1,21 +1,24 @@
 import React, { ReactElement } from 'react';
 import './NavBar.css';
 
-interface GreetingsProps {
-  pageList: Array<React.ReactComponentElement<any>>;
+interface TypeProps {
+  pageList: React.ReactComponentElement<any>[];
   slideIndex: number;
   setSlideIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const NavBar: React.FC<GreetingsProps> = (props): ReactElement => {
+const NavBar: React.FC<TypeProps> = (props): ReactElement => {
   // receive props
   const [pageList, slideIndex, setSlideIndex] = [props.pageList, props.slideIndex, props.setSlideIndex];
 
-  
   // function called when each nav button is clicked => fnc from parent toplevelcontent.js
   function updateSlide(selectedIndex: number): void { 
-    setSlideIndex(selectedIndex);
-    updateHeight(selectedIndex);
+    setSlideIndex(selectedIndex); // update state 
+    updateHeight(selectedIndex); // update height to match slide height
+
+    // update url via History API
+    window.history.replaceState(null, "", 
+      (selectedIndex === 0)? "/": pageList[selectedIndex].type.name.toLowerCase());
   };
   
   // update height according to the selected slide
@@ -44,8 +47,7 @@ const NavBar: React.FC<GreetingsProps> = (props): ReactElement => {
                    </button>
     }
   }
-  // name type above
-  //debugger;
+
   return (
     <header className="nav">
       <div className="nav-container">

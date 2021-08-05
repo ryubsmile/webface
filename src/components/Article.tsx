@@ -12,12 +12,12 @@ import './Article.css';
 const sidePadding: number = 130; // pass as prop later on for responsive design
 const slideSpeed: number = 300;
 
-interface GreetingsProps {
-  pageList: Array<React.ReactComponentElement<any>>;
+interface TypeProps {
+  pageList: React.ReactComponentElement<any>[];
   slideIndex: number;
 }
 
-const Article: React.FC<GreetingsProps> = (props): ReactElement => {
+const Article: React.FC<TypeProps> = (props): ReactElement => {
   const [pageList, slideIndex] = [props.pageList, props.slideIndex]; //receive props
   const mainContainer = useRef<HTMLElement>(null);
 

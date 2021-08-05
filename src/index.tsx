@@ -9,9 +9,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TopLevelContent from './components/TopLevelContent';
 
+const PageRouter = () => { 
+  const pathName = window.location.pathname;
+
+  return (
+    <TopLevelContent url={pathName} />
+  );
+};
+
 ReactDOM.render(
   <React.StrictMode>
-    <TopLevelContent />
+    <PageRouter />
   </React.StrictMode>,
   document.getElementById('root')
 );
