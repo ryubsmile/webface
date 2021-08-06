@@ -22,8 +22,9 @@ interface TypeProps{
 }
 
 const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
-  const url: string = props.url.toLowerCase().slice(1);
+  const url: string = props.url.toLowerCase().slice(1); // parse url to pure string without slash in the front.
 
+  // finds out the matching index for the url. If none, revert to 0.
   let urlDesiredSlideIndex: number = pageList.length;
   while(--urlDesiredSlideIndex > 0){
     if(pageList[urlDesiredSlideIndex].type.name.toLowerCase() === url){ break; }

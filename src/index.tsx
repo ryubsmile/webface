@@ -11,10 +11,8 @@ import ReactDOM from 'react-dom';
 import TopLevelContent from './components/TopLevelContent';
 
 const PageRouter = () => { 
-  const pathName: string = window.location.pathname;
-  return (
-    <TopLevelContent url={pathName} />
-  );
+  const pathName: string = window.location.pathname; // e.g. google.com/search? => /search?
+  return <TopLevelContent url={pathName} />;
 };
 
 ReactDOM.render(

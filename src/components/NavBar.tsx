@@ -27,7 +27,8 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
     const selectedSlide: Element = document.querySelectorAll('.slide-content')[indexToGetHeight];
     slideBox.style.height = selectedSlide.clientHeight + "px"; 
   }
-  window.onload = () => { updateHeight(slideIndex); };
+  // update height for the first page. Deals with DOM, so use window.onload
+  window.onload = () => { updateHeight(slideIndex); }; 
 
   // update buttons and apply states
   let buttons = [];
@@ -55,7 +56,7 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
           {buttons[0]}
         </div>
         <div className="nav-item links">
-          {buttons.slice(1)}
+          {buttons.slice(1) /* 1 ~ end */} 
         </div>
       </div>
     </header>

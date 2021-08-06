@@ -15,7 +15,6 @@ let isInitialLoad: number = 4;
 /* 4 or above => initial load animation X
    3 or below => initial load animation O */
 
-
 interface TypeProps {
   pageList: React.ReactComponentElement<any>[];
   slideIndex: number;
@@ -23,7 +22,7 @@ interface TypeProps {
 
 const Article: React.FC<TypeProps> = (props): ReactElement => {
   const [pageList, slideIndex] = [props.pageList, props.slideIndex]; //receive props
-  const mainContainer = useRef<HTMLElement>(null);
+  const mainContainer = useRef<HTMLElement>(null); // setup reference to VDOM
 
   const [widths, setWidths] = useState({
     containerWidth: 0,
@@ -34,7 +33,7 @@ const Article: React.FC<TypeProps> = (props): ReactElement => {
   1. first render
   2. every time resize event happens : width changes.*/
   const updateWidths = (): void => {
-    if(mainContainer.current){
+    if(mainContainer.current) {
       setWidths({
         containerWidth: mainContainer.current.clientWidth,
         slideWidth: mainContainer.current.clientWidth - sidePadding * 2,
