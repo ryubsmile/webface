@@ -6,7 +6,7 @@ const lorem = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ullam
 const Works: React.FC = () => {
   return (
     <>
-      <BigText title="works();" content_above={""} />
+      <BigText title="works();" />
       <div>{lorem}</div>
     </>
   );

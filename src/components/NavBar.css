@@ -15,6 +15,11 @@ header.nav{
   border: 0;
   padding: 0;
 }
+
+.nav button:last-of-type span{
+  margin-right: 0px;
+}
+
 .nav-container{
   display:grid;
   grid-template-columns: 100px 1fr;
@@ -23,15 +28,19 @@ header.nav{
 
 .nav-item{
   text-align: right;
-  font-size: 13pt;
+  font-size: 20px;
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .nav-item.logo{
   text-align: left;
-  margin-left: 130px;
+  margin-left: var(--custom-padding);
+}
+
+img.nav-item {
+  width: 30px;
 }
 
 /* logo color change animation */
@@ -49,14 +58,14 @@ header.nav{
 }
 
 /* navigation item that contains link items */
-.nav-item.links{margin-right:110px;}
+.nav-item.links{ margin-right: var(--custom-padding) }
 
-.nav-item.active{color:white;}
+.nav-item.active{ color:white; }
 /* navigation items hover animation */
-.nav-item.inactive{animation: mouse-off-nav-item 2s forwards;}
+.nav-item.inactive{ animation: mouse-off-nav-item 2s forwards; }
 
-@keyframes mouse-off-nav-item{from{color:white;}to{color:gray;}}
+@keyframes mouse-off-nav-item{ from{ color:white; } to{ color:gray; } }
 
-.nav-item.inactive:hover{animation: mouse-on-nav-item 0.5s forwards;}
+.nav-item.inactive:hover{ animation: mouse-on-nav-item 0.5s forwards; }
 
-@keyframes mouse-on-nav-item{from{color:gray;}to{color:white;}}
+@keyframes mouse-on-nav-item{ from{ color:gray; } to{ color:white; } }

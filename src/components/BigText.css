@@ -1,15 +1,13 @@
-div.page-mask{
+.page-mask{
   height: 250px;
   position: relative;
 }
 
-h1.big-text{
+.big-text{
   font-size:10vw;
   position: absolute;
   bottom: 0px;
   margin: 0px;
-}
-
-p{
-  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  /* color: rgb(161, 0, 32); */
 }

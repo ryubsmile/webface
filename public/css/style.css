@@ -3,6 +3,10 @@
   src: url("../fonts/AppleSDGothicNeo.ttc");
 }
 
+:root {
+  --custom-padding: 150px;
+}
+
 * {
   user-select: none;
   margin: 0;
@@ -10,6 +14,7 @@
   padding: 0;
   text-decoration: none;
   color: white;
+  font-family: 'apple', 'verdana', 'arial';
   /* height: max-content; */
 }
 
@@ -17,13 +22,11 @@ body{
   margin:0;
   background-color: black;
   color:white;
-  font-family: 'apple', 'verdana', 'arial';
 }
 
 div{
   /* border: 1px white solid; */
 }
-
 
 .courier-new{
   font-family: 'Courier New', Courier, monospace;

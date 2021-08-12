@@ -4,7 +4,7 @@ import BigText from '../BigText';
 const About: React.FC = () => {
   return (
     <>
-      <BigText title="about();" content_above={""} />
+      <BigText title="about();" />
     </>
   );
 }

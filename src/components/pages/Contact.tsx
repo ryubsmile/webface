@@ -3,16 +3,54 @@ import BigText from '../BigText';
 import './Contact.css'
 
 const Contact: React.FC = () => {
+
   return (
     <>
-      <BigText title="contact();" content_above="" />
+      <BigText title="contact();"/>
       <div className="contact-methods">
-        <div className="method email"><a href="mailto:ryubsmile@gmail.com" target="_blank" rel="noopener noreferrer">ryubsmile@gmail.com: mail</a></div> {/* email me! */}
-        <div className="method github"><a href="https://github.com/ryubsmile" target="_blank" rel="noopener noreferrer">ryubsmile: github</a></div> {/* star me! */}
-        <div className="method TBD"><a href=";" rel="noopener noreferrer">To be added more...</a></div> {/* wait for future updates or contact me! */}
+        {createMethodHTML}
       </div>
     </>
   );
 }
 
 export default Contact;
+
+interface TypeMethod {
+  name: string;
+  href?: string;
+  orgnTxt: string;
+  hvrTxt?: string;
+}
+
+const contactMethods: TypeMethod[] = [
+  {
+    name: "email",
+    href: "mailto:ryubsmile@gmail.com",
+    orgnTxt: "EMAIL ME!",
+    hvrTxt: "ryubsmile@gmail.com"
+  },
+  {
+    name: "github",
+    href: "https://github.com/ryubsmile",
+    orgnTxt: "GITHUB",
+    hvrTxt: "ryubsmile"
+  },
+  {
+    name: "TBD",
+    href: "/contact",
+    orgnTxt: "To be added"
+  },
+];
+
+const createMethodHTML: JSX.Element[] = contactMethods.map((item: TypeMethod, index: number)=>{
+  return (
+    <div className={"method " + item.name}>
+      <a href={item.href} target="_blank" rel="noopener noreferrer">
+        {item.orgnTxt}
+      </a>
+    </div>
+  );
+});
+
+//function changeText(this: HTMLAnchorElement, textToChange: string){ this.textContent = textToChange; };

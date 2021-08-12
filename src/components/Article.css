@@ -1,6 +1,6 @@
-.main-container{
+.main-container {
   position: relative;
-  margin-bottom:130px;
+  margin-bottom: var(--custom-padding);
 }
 
 .slide-wrap { 
@@ -12,7 +12,7 @@
 .slide-box { 
   width: 100%; 
   margin: auto; 
-  overflow: hidden; 
+  /* overflow: hidden;  */
 }
 
 .slide-content { 
@@ -20,7 +20,7 @@
   float: left; 
   width: 100%; 
   height: max-content; 
-  margin-left:130px;
-  margin-right:130px;
+  margin-left: var(--custom-padding);
+  margin-right: var(--custom-padding);
 }
 

@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../../fonts/FiraCode-Regular.ttf) format('ttf');
+}
+
+p.explanation{
+  position: absolute;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  background-color: #212121; /*#0F111A; */
+  color: #89DDFF;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.white{
+  font: inherit;
+  color: #EDFFFF;/* #A6ACCD; */
+}
+
+.quote{
+  font: inherit;
+  color: #C3E88D;
+}
