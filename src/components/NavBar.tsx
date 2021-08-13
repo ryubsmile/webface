@@ -15,7 +15,7 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
   function updateSlide(selectedSlideIndex: number): void { 
     setSlideIndex(selectedSlideIndex); // update state 
     updateHeight(selectedSlideIndex); // update height to match slide height
-    
+
     // update url via History API & document title
     const pageName: string = pageList[selectedSlideIndex]?.type.name;
     if(selectedSlideIndex === 0){
