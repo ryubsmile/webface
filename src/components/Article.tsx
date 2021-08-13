@@ -10,9 +10,7 @@ import { TypeArticleProps } from './PagesDefault';
 const sidePadding: number = 150; // pass as prop later on for responsive design
 const slideSpeed: number = 300;
 
-/* 4 or above => initial load animation X
-   3 or below => initial load animation O */
-let isInitialLoad: number = 4; 
+let isInitialLoad: number = 1; 
 
 interface TypeProps {
   pageList: React.ReactElement<TypeArticleProps>[];

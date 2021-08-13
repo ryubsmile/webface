@@ -3,6 +3,7 @@ import './NavBar.css';
 import { TypeArticleProps } from './PagesDefault';
 
 interface TypeProps {
+  defaultURL: string;
   pageList: React.ReactElement<TypeArticleProps>[];
   slideIndex: number;
   setSlideIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -10,7 +11,7 @@ interface TypeProps {
 
 const NavBar: React.FC<TypeProps> = (props): ReactElement => {
   // receive props
-  const [pageList, slideIndex, setSlideIndex] = [props.pageList, props.slideIndex, props.setSlideIndex];
+  const [defaultURL, pageList, slideIndex, setSlideIndex] = [props.defaultURL, props.pageList, props.slideIndex, props.setSlideIndex];
 
   // function called when each nav button is clicked => fnc from parent toplevelcontent.js
   function updateSlide(selectedSlideIndex: number): void { 
@@ -20,10 +21,10 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
     // update url via History API & document title
     const pageName: string = pageList[selectedSlideIndex]?.props.name;
     if(selectedSlideIndex === 0){
-      updateURL("/");
+      updateURL(defaultURL + "/");
       updateDocTitle("WebFace");
     }else{
-      updateURL(pageName.toLowerCase()); // lowercase
+      updateURL("#/" + pageName.toLowerCase()); // lowercase
       updateDocTitle("WebFace • " + pageName.charAt(0).toUpperCase() + pageName.slice(1));
     }
   }
