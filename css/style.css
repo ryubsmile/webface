@@ -3,15 +3,6 @@
   src: url("../fonts/AppleSDGothicNeo.ttc");
 }
 
-:root {
-}
-
-@media (max-width: 900px) {
-  :root{
-    --custom-side-padding: 10vw;
-  }
-}
-
 * {
   --custom-side-padding: 150px;
   user-select: none;
@@ -78,4 +69,11 @@ h3.me-explanation{
     0%{color:#D7322D}
     50%{color:#888888}
     100%{color:#000000}
+}
+
+/* phone */
+@media (max-width: 900px) {
+  :root{
+    --custom-side-padding: 10vw;
+  }
 }
