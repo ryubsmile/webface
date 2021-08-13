@@ -1,13 +1,11 @@
 /**
- * Applies routing to pageContent.js
- * to show body content according to the link. 
- * 
  * THIS IS AN ARTICLE COMPONENT.
  * ANYTHING ON THIS SCRIPT DOES NOT AFFECT HEADER.
  */
 
 import React, { useState, useRef, useEffect } from 'react';
 import './Article.css';
+import { TypeArticleProps } from './PagesDefault';
 
 const sidePadding: number = 150; // pass as prop later on for responsive design
 const slideSpeed: number = 300;
@@ -17,7 +15,7 @@ const slideSpeed: number = 300;
 let isInitialLoad: number = 4; 
 
 interface TypeProps {
-  pageList: React.ReactComponentElement<any>[];
+  pageList: React.ReactElement<TypeArticleProps>[];
   slideIndex: number;
 }
 
@@ -74,7 +72,7 @@ const Article: React.FC<TypeProps> = (props) => {
   };
 
   // craete slides in the slides var
-  let slides: JSX.Element[] = pageList.map((item: React.ReactComponentElement<any>, index: number)=>{
+  let slides: JSX.Element[] = pageList.map((item: React.ReactElement<TypeArticleProps>, index: number)=>{
     return (
       <div className="slide-content" key={index} style={updateCss(widths.slideWidth, -1)}>
         {item}

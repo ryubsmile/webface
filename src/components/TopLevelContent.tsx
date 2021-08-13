@@ -7,17 +7,18 @@ import Home from './pages/Home';
 import Works from './pages/Works';
 import About from './pages/About';
 import Contact from './pages/Contact';
-//<- article list end
+import { TypeArticleProps } from './PagesDefault';
 
 // add article to this object if adding one.
-const pageList: React.ReactComponentElement<any>[] = [
-  <Home />,
-  <Works />,
-  <About />,
-  <Contact />,
+const pageList: React.ReactElement<TypeArticleProps>[] = [
+  <Home name="Home"/>,
+  <Works name="works"/>,
+  <About name="About"/>,
+  <Contact name="Contact"/>,
 ];
+//<- article list end
 
-interface TypeProps{
+interface TypeProps {
   url: string;
 }
 
@@ -27,9 +28,9 @@ const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
   // finds out the matching index for the url. If none, revert to 0.
   let urlDesiredSlideIndex: number = pageList.length;
   while(--urlDesiredSlideIndex > 0){
-    if(pageList[urlDesiredSlideIndex].type.name.toLowerCase() === url){ break; }
+    if(pageList[urlDesiredSlideIndex].props.name.toLowerCase() === url){ break; }
   }
-  
+
   const [slideIndex, setSlideIndex] = useState<number>(urlDesiredSlideIndex || 0);
   return(
     <>

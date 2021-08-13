@@ -1,8 +1,9 @@
 import React from 'react';
 import BigText from '../BigText';
 import './Contact.css'
+import { TypeArticleProps } from '../PagesDefault';
 
-const Contact: React.FC = () => {
+const Contact: React.FC<TypeArticleProps> = () => {
 
   return (
     <>

@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
 import './NavBar.css';
+import { TypeArticleProps } from './PagesDefault';
 
 interface TypeProps {
-  pageList: React.ReactComponentElement<any>[];
+  pageList: React.ReactElement<TypeArticleProps>[];
   slideIndex: number;
   setSlideIndex: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -10,14 +11,14 @@ interface TypeProps {
 const NavBar: React.FC<TypeProps> = (props): ReactElement => {
   // receive props
   const [pageList, slideIndex, setSlideIndex] = [props.pageList, props.slideIndex, props.setSlideIndex];
-  
+
   // function called when each nav button is clicked => fnc from parent toplevelcontent.js
   function updateSlide(selectedSlideIndex: number): void { 
     setSlideIndex(selectedSlideIndex); // update state 
     updateHeight(selectedSlideIndex); // update height to match slide height
 
     // update url via History API & document title
-    const pageName: string = pageList[selectedSlideIndex]?.type.name;
+    const pageName: string = pageList[selectedSlideIndex]?.props.name;
     if(selectedSlideIndex === 0){
       updateURL("/");
       updateDocTitle("WebFace");
@@ -36,13 +37,13 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
     if(i === 0) { // only for the home page
       buttons[i] = <button key={i} id="logo-color-change" onClick={updateSlide.bind(null, i)}>
                      <img className={(i === slideIndex)? "nav-item active": "nav-item inactive"} 
-                          src="./images/fire-red.png" 
+                          src="images/fire-red.png" 
                           alt="OOPS! REFRESH!" />
                    </button>
     }else{
       buttons[i] = <button key={i} onClick={updateSlide.bind(null, i)}>
                      <span className={(i === slideIndex)? "nav-item active": "nav-item inactive"}>
-                       {pageList[i].type.name.toUpperCase()}
+                       {pageList[i].props.name.toUpperCase()}
                      </span>
                    </button>
     }

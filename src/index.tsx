@@ -3,12 +3,14 @@
  * 
  * If a component is somehow not connected to this script, 
  * it will not show up on the website no matter what.
+ * 
+ * 
  */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { BrowserRouter, Route, withRouter, useLocation } from 'react-router-dom';
 import TopLevelContent from './components/TopLevelContent';
+// import { BrowserRouter, Route, withRouter, useLocation } from 'react-router-dom';
 
 const PageRouter = () => { 
   const pathName: string = window.location.pathname; // e.g. google.com/search? => /search?
