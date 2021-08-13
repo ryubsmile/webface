@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'apple';
+  src: url("../fonts/AppleSDGothicNeo.ttc");
+}
+
+:root {
+  --custom-padding: 150px;
+}
+
+* {
+  user-select: none;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+  font-family: 'apple', 'verdana', 'arial';
+  /* height: max-content; */
+}
+
+body{
+  margin:0;
+  background-color: black;
+  color:white;
+}
+
+div{
+  /* border: 1px white solid; */
+}
+
+.courier-new{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.courier-new a{
+  text-decoration: none;
+  color:white;
+}
+
+.courier-new h2 li{
+  margin-bottom: 20px;
+}
+
+h1{
+  display: block;
+  font-size:2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.2em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+      
+h3{
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  color:#888888
+}
+
+h3.me-explanation{
+    animation: gray-black-toggle 1s alternate; 
+    animation-iteration-count: infinite;
+    animation-delay: -2s
+}
+
+@keyframes gray-black-toggle{
+    0%{color:#D7322D}
+    50%{color:#888888}
+    100%{color:#000000}
+}
+
+@media(max-width: 630px){
+  /* nav bar */
+  .nav-container{grid-template-columns: 1fr;}
+
+  .nav-item{
+      margin-left:0 !important;
+      margin-right:0 !important;
+      text-align: center !important;
+  }
+
+  .nav-item.logo{
+      margin-top: 62.5px;
+  }
+
+  header.nav{
+      height:200px;
+  }
+
+  .nav-item.links button{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  /* body texts*/
+}
