@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import './NavBar.css';
-import { TypeArticleProps } from './PagesDefault';
+import { TypeArticleProps } from './PagesTemplate';
 
 interface TypeProps {
   defaultURL: string;
@@ -10,8 +10,8 @@ interface TypeProps {
 }
 
 const NavBar: React.FC<TypeProps> = (props): ReactElement => {
-  // receive props
-  const [defaultURL, pageList, slideIndex, setSlideIndex] = [props.defaultURL, props.pageList, props.slideIndex, props.setSlideIndex];
+  const [      defaultURL,       pageList,       slideIndex,       setSlideIndex] 
+      = [props.defaultURL, props.pageList, props.slideIndex, props.setSlideIndex];
 
   // function called when each nav button is clicked => fnc from parent toplevelcontent.js
   function updateSlide(selectedSlideIndex: number): void { 
@@ -30,7 +30,7 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
   }
 
   // update height for the first page. Deals with DOM, so use window.onload
-  window.onload = (): void => { updateSlide(slideIndex); }; 
+  window.onload = () => { updateSlide(slideIndex); }; 
 
   // update buttons and apply states
   let buttons = [];

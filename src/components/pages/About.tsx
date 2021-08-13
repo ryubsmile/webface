@@ -1,6 +1,6 @@
 import React from 'react';
 import BigText from '../BigText';
-import { TypeArticleProps } from '../PagesDefault';
+import { TypeArticleProps } from '../PagesTemplate';
 
 const About: React.FC<TypeArticleProps> = () => {
   return (

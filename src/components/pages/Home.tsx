@@ -1,7 +1,7 @@
 import React from 'react';
 import BigText from '../BigText';
 import './Home.css'
-import { TypeArticleProps } from '../PagesDefault';
+import { TypeArticleProps } from '../PagesTemplate';
 
 const lorem =  `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut et non facilis accusantium adipisci fugiat 
   veritatis culpa perferendis quo quos voluptate quas quaerat minus aspernatur repellat minima doloribus, ut rerum sed 
@@ -12,10 +12,14 @@ const lorem =  `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut et
   quis iste doloribus?`;
 
 const Home: React.FC<TypeArticleProps> = () => {
-  const subContent = <p className="explanation">
-    import <span className="white">Highschool</span>,{" { "}<span className="white"> math</span>, 
-    <span className="white"> science </span> {" } "} from '<span className="quote">/jeju/kisj/classOf2022</span>';
-  </p>
+  const subContent = (
+    <div>
+      <p className="explanation">
+        import <span className="white">Highschool</span>,{" { "}<span className="white"> math</span>, 
+        <span className="white"> science </span> {" } "} from '<span className="quote">/jeju/kisj/classOf2022</span>';
+      </p>
+    </div>
+  );
 
   return (
     <>

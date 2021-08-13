@@ -3,12 +3,12 @@
  * ANYTHING ON THIS SCRIPT DOES NOT AFFECT HEADER.
  */
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Article.css';
-import { TypeArticleProps } from './PagesDefault';
+import { TypeArticleProps } from './PagesTemplate';
 
-const sidePadding: number = 150; // pass as prop later on for responsive design
-const slideSpeed: number = 300;
+let customSidePadding: number = 150; // pass as prop later on for responsive design
+const slideSpeed: number = 300; // milliseconds
 
 let isInitialLoad: number = 1; 
 
@@ -19,35 +19,22 @@ interface TypeProps {
 
 const Article: React.FC<TypeProps> = (props) => {
   const [pageList, slideIndex] = [props.pageList, props.slideIndex]; //receive props
-  const mainContainer = useRef<HTMLElement>(null); // setup reference to VDOM
 
   const [widths, setWidths] = useState({
     containerWidth: 0,
     slideWidth: 0,
   });
-  
-  /* update and render width on 
-  1. first render
-  2. every time resize event happens : width changes.*/
-  const updateWidths = (): void => {
-    if(mainContainer.current) {
-      setWidths({
-        containerWidth: mainContainer.current.clientWidth,
-        slideWidth: mainContainer.current.clientWidth - sidePadding * 2,
-      });
-    }
-  };
 
   //on component update || mount
   useEffect(() => {
-    updateWidths(); 
-    window.addEventListener('resize', updateWidths);
+    updateWidths(setWidths); 
+    window.addEventListener('resize', () => { updateWidths(setWidths); });
     return () => { // when component unmounts.
-      window.removeEventListener('resize', updateWidths);
+      window.removeEventListener('resize', () => { updateWidths(setWidths); });
     }
   },[]); // bind an empty array to prevent infinite rendering
 
-  const updateCss = (width: number, slideIndex: number) => {
+  function updateCss(width: number, slideIndex: number){
     const css = {
       width: width + "px",
       transition: "",
@@ -79,10 +66,10 @@ const Article: React.FC<TypeProps> = (props) => {
   });
 
   return (
-    <article className="main-container" ref={mainContainer}>
+    <article className="main-container">
       <div className="slide-wrap" style={updateCss(widths.containerWidth, -1)}>
         <div className="slide-box">
-          <div className="slide-list" style={updateCss(widths.containerWidth * slides.length, slideIndex)}>
+          <div className="slide-list" style={updateCss(widths.containerWidth * slides.length + 20, slideIndex)}>
             {slides}
           </div>
         </div>
@@ -92,3 +79,13 @@ const Article: React.FC<TypeProps> = (props) => {
 }
 
 export default Article;
+
+/* update and render width on every time resize event happens : width changes.*/
+function updateWidths(setWidths: React.Dispatch<any>): void {
+  const clientWidth = document.body.clientWidth;
+  const sidePaddingResponsive = (clientWidth > 900)? customSidePadding : clientWidth * 0.1;
+  setWidths({
+    containerWidth: clientWidth,
+    slideWidth: clientWidth - sidePaddingResponsive * 2,
+  });
+};

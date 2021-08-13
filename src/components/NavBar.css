@@ -36,7 +36,7 @@ header.nav{
 
 .nav-item.logo{
   text-align: left;
-  margin-left: var(--custom-padding);
+  margin-left: var(--custom-side-padding);
 }
 
 img.nav-item {
@@ -58,7 +58,7 @@ img.nav-item {
 }
 
 /* navigation item that contains link items */
-.nav-item.links{ margin-right: var(--custom-padding) }
+.nav-item.links{ margin-right: var(--custom-side-padding) }
 
 .nav-item.active{ color:white; }
 /* navigation items hover animation */
@@ -69,3 +69,27 @@ img.nav-item {
 .nav-item.inactive:hover{ animation: mouse-on-nav-item 0.5s forwards; }
 
 @keyframes mouse-on-nav-item{ from{ color:gray; } to{ color:white; } }
+
+/* phone size 
+@media(max-width: 630px){
+  .nav-container{grid-template-columns: 1fr;}
+
+  .nav-item{
+      margin-left:0 !important;
+      margin-right:0 !important;
+      text-align: center !important;
+  }
+
+  .nav-item.logo{
+      margin-top: 62.5px;
+  }
+
+  header.nav{
+      height:200px;
+  }
+
+  .nav-item.links button{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+}*/

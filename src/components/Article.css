@@ -20,7 +20,7 @@
   float: left; 
   width: 100%; 
   height: max-content; 
-  margin-left: var(--custom-padding);
-  margin-right: var(--custom-padding);
+  margin-left: var(--custom-side-padding);
+  margin-right: var(--custom-side-padding);
 }
 
