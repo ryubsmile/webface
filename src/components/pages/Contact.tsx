@@ -45,7 +45,7 @@ const contactMethods: TypeMethod[] = [
 
 const createMethodHTML: JSX.Element[] = contactMethods.map((item: TypeMethod, index: number)=>{
   return (
-    <div className={"method " + item.name}>
+    <div className={"method " + item.name} key={index}>
       <a href={item.href} target="_blank" rel="noopener noreferrer">
         {item.orgnTxt}
       </a>

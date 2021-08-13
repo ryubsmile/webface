@@ -36,7 +36,7 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
     if(i === 0) { // only for the home page
       buttons[i] = <button key={i} id="logo-color-change" onClick={updateSlide.bind(null, i)}>
                      <img className={(i === slideIndex)? "nav-item active": "nav-item inactive"} 
-                          src="images/fire-red.png" 
+                          src="./images/fire-red.png" 
                           alt="OOPS! REFRESH!" />
                    </button>
     }else{
