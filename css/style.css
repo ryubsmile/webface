@@ -73,7 +73,7 @@ h3.me-explanation{
 
 /* phone */
 @media (max-width: 900px) {
-  :root{
+  * {
     --custom-side-padding: 10vw;
   }
 }
