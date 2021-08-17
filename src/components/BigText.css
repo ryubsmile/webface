@@ -11,3 +11,17 @@
   color: white;
   /* color: rgb(161, 0, 32); */
 }
+
+/* tablet */
+@media(max-width: 900px){
+  .page-mask{
+    height: 24vw;
+  }
+}
+
+/* phone */
+@media(max-width: 550px){
+  .page-mask{
+    height: 130px;
+  }
+}

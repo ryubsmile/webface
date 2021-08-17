@@ -11,9 +11,9 @@ const lorem =  `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut et
   debitis eligendi labore architecto odio nisi repellendus numquam ipsam repudiandae tenetur iure modi, expedita odit 
   quis iste doloribus?`;
 
-const Home: React.FC<TypeArticleProps> = () => {
+const Home: React.FC<TypeArticleProps> = props => {
   const subContent = (
-    <div>
+    <div className="markDown">
       <p className="explanation">
         import <span className="white">Highschool</span>,{" { "}<span className="white"> math</span>, 
         <span className="white"> science </span> {" } "} from '<span className="quote">/jeju/kisj/classOf2022</span>';

@@ -25,14 +25,17 @@ const Article: React.FC<TypeProps> = (props) => {
     slideWidth: 0,
   });
 
+  const [slideHeight, setHeight] = useState(0);
+
   //on component update || mount
   useEffect(() => {
-    updateWidths(setWidths); 
-    window.addEventListener('resize', () => { updateWidths(setWidths); });
+    const updateSlide = () => { updateWidths(setWidths); updateHeight(setHeight, slideIndex); }
+    updateSlide();
+    window.addEventListener('resize', () => { updateSlide(); });
     return () => { // when component unmounts.
-      window.removeEventListener('resize', () => { updateWidths(setWidths); });
+      window.removeEventListener('resize', () => { updateSlide(); });
     }
-  },[]); // bind an empty array to prevent infinite rendering
+  },[slideIndex]); // bind an empty array to prevent infinite rendering
 
   function updateCss(width: number, slideIndex: number){
     const css = {
@@ -68,7 +71,7 @@ const Article: React.FC<TypeProps> = (props) => {
   return (
     <article className="main-container">
       <div className="slide-wrap" style={updateCss(widths.containerWidth, -1)}>
-        <div className="slide-box">
+        <div className="slide-box" style={{height: slideHeight}}>
           <div className="slide-list" style={updateCss(widths.containerWidth * slides.length + 20, slideIndex)}>
             {slides}
           </div>
@@ -89,3 +92,8 @@ function updateWidths(setWidths: React.Dispatch<any>): void {
     slideWidth: clientWidth - sidePaddingResponsive * 2,
   });
 };
+
+function updateHeight(setHeight: React.Dispatch<any>, slideIndex: number): void {
+  const selectedSlide: Element = document.querySelectorAll('.slide-content')[slideIndex];
+  setHeight(selectedSlide.clientHeight);
+}

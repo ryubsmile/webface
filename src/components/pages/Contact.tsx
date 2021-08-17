@@ -3,8 +3,8 @@ import BigText from '../BigText';
 import './Contact.css'
 import { TypeArticleProps } from '../PagesTemplate';
 
-const Contact: React.FC<TypeArticleProps> = () => {
-
+const Contact: React.FC<TypeArticleProps> = props => {
+  //const name = props.name;
   return (
     <>
       <BigText title="contact();"/>

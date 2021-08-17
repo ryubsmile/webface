@@ -93,3 +93,17 @@ img.nav-item {
       margin-bottom: 10px;
   }
 }*/
+
+/* phone size */
+@media(max-width: 550px){
+  .nav-item{
+    margin-right: 15px;
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 400px){
+  .nav-item{
+    font-size: 15px;
+  }
+}
