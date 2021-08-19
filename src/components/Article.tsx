@@ -9,7 +9,6 @@ import { TypeArticleProps } from './PagesTemplate';
 
 let customSidePadding: number = 150; // pass as prop later on for responsive design
 const slideSpeed: number = 300; // milliseconds
-
 let isInitialLoad: number = 1; 
 
 interface TypeProps {

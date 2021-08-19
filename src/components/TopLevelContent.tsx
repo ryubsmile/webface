@@ -25,12 +25,13 @@ interface TypeProps {
 
 const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
   const [defaultURL, entireURL] = [props.defaultURL, props.entireURL];
-  const url = entireURL.replace(defaultURL, ""); // parse url to pure string without slash in the front.
+  let url = entireURL.replace(defaultURL, ""); // parse url, e.g. webface/works => /works
 
   // finds out the matching index for the url. If none, revert to 0.
   let urlDesiredSlideIndex: number = pageList.length;
   while(--urlDesiredSlideIndex > 0){
     const lowerCasePageName = pageList[urlDesiredSlideIndex].props.name.toLowerCase();
+    console.log(lowerCasePageName);
     if(url.includes(lowerCasePageName)){ break; }
   }
 
