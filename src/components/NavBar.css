@@ -1,8 +1,7 @@
 header.nav{
   width:100%;
-  height:144px;
+  height: calc(var(--custom-side-padding) * 1.5);
   text-align: center;
-  vertical-align: middle;
 }
 
 .nav a{
@@ -23,19 +22,20 @@ header.nav{
 .nav-container{
   display:grid;
   grid-template-columns: 100px 1fr;
-  height:100%;
+  height:inherit;
 }
 
 .nav-item{
   text-align: right;
   font-size: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: var(--custom-side-padding);
   margin-right: 40px;
+  /* font-weight: 700; */
 }
 
 .nav-item.logo{
   text-align: left;
+  margin-top: -5px;
   margin-left: var(--custom-side-padding);
 }
 
@@ -94,8 +94,18 @@ img.nav-item {
   }
 }*/
 
+@media(min-width: 1350px){
+  .nav-item{
+    margin-right: 5vw;
+  }
+}
+
 /* phone size */
-@media(max-width: 550px){
+@media(max-width: 600px){
+  header.nav{
+    height: calc(var(--custom-side-padding) * 2);
+  }
+
   .nav-item{
     margin-right: 15px;
     font-size: 18px;

@@ -12,6 +12,12 @@
   /* color: rgb(161, 0, 32); */
 }
 
+@media(min-width: 1350px){
+  .big-text{
+    font-size: 130px;
+  }
+}
+
 /* tablet */
 @media(max-width: 900px){
   .page-mask{

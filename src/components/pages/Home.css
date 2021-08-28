@@ -16,9 +16,10 @@
 p.explanation{
   font-family: 'Courier New', 'Fira Code', Courier, monospace;
   color: #89DDFF;
-  width:65vw;
-  font-size: 1.6vw;
-  line-height: 4vw;
+  width: max-content;
+  font-size: 12pt;
+  line-height: 25px;
+  word-break: break-all;
 }
 
 .white{
@@ -31,9 +32,19 @@ p.explanation{
   color: #C3E88D;
 }
 
+
+@media(min-width: 1000px){
+  
+}
+
 @media(max-width: 900px){
   p.explanation{
     width:77vw;
-    font-size: 1.8vw;
+    font-size: 10pt;
+    /* font-size: 1.8vw; */
+  }
+
+  .markDown{
+    padding: 5px;
   }
 }

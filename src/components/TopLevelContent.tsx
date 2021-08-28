@@ -31,7 +31,6 @@ const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
   let urlDesiredSlideIndex: number = pageList.length;
   while(--urlDesiredSlideIndex > 0){
     const lowerCasePageName = pageList[urlDesiredSlideIndex].props.name.toLowerCase();
-    console.log(lowerCasePageName);
     if(url.includes(lowerCasePageName)){ break; }
   }
 
