@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/webface/static/css/main.9bc72d9d.chunk.css",
-    "main.js": "/webface/static/js/main.cdac5e64.chunk.js",
-    "main.js.map": "/webface/static/js/main.cdac5e64.chunk.js.map",
+    "main.css": "/webface/static/css/main.da6d282e.chunk.css",
+    "main.js": "/webface/static/js/main.04f493b4.chunk.js",
+    "main.js.map": "/webface/static/js/main.04f493b4.chunk.js.map",
     "runtime-main.js": "/webface/static/js/runtime-main.59e4d976.js",
     "runtime-main.js.map": "/webface/static/js/runtime-main.59e4d976.js.map",
     "static/js/2.62ca53e9.chunk.js": "/webface/static/js/2.62ca53e9.chunk.js",
     "static/js/2.62ca53e9.chunk.js.map": "/webface/static/js/2.62ca53e9.chunk.js.map",
     "index.html": "/webface/index.html",
-    "static/css/main.9bc72d9d.chunk.css.map": "/webface/static/css/main.9bc72d9d.chunk.css.map",
+    "static/css/main.da6d282e.chunk.css.map": "/webface/static/css/main.da6d282e.chunk.css.map",
     "static/js/2.62ca53e9.chunk.js.LICENSE.txt": "/webface/static/js/2.62ca53e9.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/webface/static/media/FiraCode-Regular.8b606aa9.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.59e4d976.js",
     "static/js/2.62ca53e9.chunk.js",
-    "static/css/main.9bc72d9d.chunk.css",
-    "static/js/main.cdac5e64.chunk.js"
+    "static/css/main.da6d282e.chunk.css",
+    "static/js/main.04f493b4.chunk.js"
   ]
 }
