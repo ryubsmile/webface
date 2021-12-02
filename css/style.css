@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'apple';
-  src: url("../fonts/AppleSDGothicNeo.ttc");
+  src: url('../fonts/AppleSDGothicNeo.ttc');
 }
 
 * {
@@ -11,44 +11,44 @@
   padding: 0;
   text-decoration: none;
   color: white;
-  font-family: 'apple', 'verdana', 'arial';
+  font-family: 'Apple SD Gothic Neo', 'apple', 'verdana', 'arial';
   /* height: max-content; */
 }
 
-body{
-  margin:0;
+body {
+  margin: 0;
   background-color: black;
-  color:white;
+  color: white;
 }
 
-div{
+div {
   /* border: 1px white solid; */
 }
 
-.courier-new{
-  font-family: 'Courier New', Courier, monospace;
+.courier-new {
+  font-family: 'Courier New', Courier, monospace, ap;
 }
 
-.courier-new a{
+.courier-new a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 
-.courier-new h2 li{
+.courier-new h2 li {
   margin-bottom: 20px;
 }
 
-h1{
+h1 {
   display: block;
-  font-size:2em;
+  font-size: 2em;
   margin-block-start: 0.67em;
   margin-block-end: 0.2em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
 }
-      
-h3{
+
+h3 {
   display: block;
   font-size: 1.17em;
   margin-block-start: 1em;
@@ -56,24 +56,30 @@ h3{
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: normal;
-  color:#888888
+  color: #888888;
 }
 
-h3.me-explanation{
-    animation: gray-black-toggle 1s alternate; 
-    animation-iteration-count: infinite;
-    animation-delay: -2s
+h3.me-explanation {
+  animation: gray-black-toggle 1s alternate;
+  animation-iteration-count: infinite;
+  animation-delay: -2s;
 }
 
-@keyframes gray-black-toggle{
-    0%{color:#D7322D}
-    50%{color:#888888}
-    100%{color:#000000}
+@keyframes gray-black-toggle {
+  0% {
+    color: #d7322d;
+  }
+  50% {
+    color: #888888;
+  }
+  100% {
+    color: #000000;
+  }
 }
 
 /* phone */
 @media (max-width: 900px) {
   * {
-    --custom-side-padding: 10vw;
+    --custom-side-padding: 13vw;
   }
 }
