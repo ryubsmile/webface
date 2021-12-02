@@ -35,12 +35,12 @@ header.nav{
 
 .nav-item.logo{
   text-align: left;
-  margin-top: -5px;
+  margin-top: -15px;
   margin-left: var(--custom-side-padding);
 }
 
 img.nav-item {
-  width: 30px;
+  width: 50px;
 }
 
 /* logo color change animation */
@@ -96,7 +96,7 @@ img.nav-item {
 
 @media(min-width: 1350px){
   .nav-item{
-    margin-right: 5vw;
+    margin-right: 2em;
   }
 }
 

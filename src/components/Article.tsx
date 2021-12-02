@@ -23,12 +23,14 @@ const Article: React.FC<TypeProps> = (props) => {
     containerWidth: 0,
     slideWidth: 0,
   });
-
   const [slideHeight, setHeight] = useState(0);
 
   //on component update || mount
   useEffect(() => {
-    const updateSlide = () => { updateWidths(setWidths); updateHeight(setHeight, slideIndex); }
+    const updateSlide = () => { 
+      updateWidths(setWidths); 
+      updateHeight(setHeight, slideIndex); 
+    }
     updateSlide();
     window.addEventListener('resize', () => { updateSlide(); });
     return () => { // when component unmounts.
@@ -46,21 +48,17 @@ const Article: React.FC<TypeProps> = (props) => {
     // for first page load, skip this.
     if(slideIndex >= 0){
       // skip animation if it's the first time loading this document, e.g. access via direct url.
-      if(isInitialLoad-- >= 0){
-        css.transition = "0ms";
-      }else{
-        css.transition = slideSpeed + "ms";
-      }
-
+      css.transition = (isInitialLoad-- >= 0)? "0ms" : slideSpeed + "ms";
       css.transform = `translateX(-${(widths.containerWidth * slideIndex)}px)`;
     }
 
     return css;
   };
 
-  // craete slides in the slides var
+  // create slides in the slides var
   let slides: JSX.Element[] = pageList.map((item: React.ReactElement<TypeArticleProps>, index: number)=>{
     return (
+      // <div className="slide-content" key={index} style={{height: test}}>
       <div className="slide-content" key={index} style={updateCss(widths.slideWidth, -1)}>
         {item}
       </div>
@@ -85,7 +83,8 @@ export default Article;
 /* update and render width on every time resize event happens : width changes.*/
 function updateWidths(setWidths: React.Dispatch<any>): void {
   const clientWidth = document.body.clientWidth;
-  const sidePaddingResponsive = (clientWidth > 900)? customSidePadding : clientWidth * 0.1;
+  //@media(max-width: 900px) 13vw
+  const sidePaddingResponsive = (clientWidth > 900)? customSidePadding : clientWidth * 0.13; 
   setWidths({
     containerWidth: clientWidth,
     slideWidth: clientWidth - sidePaddingResponsive * 2,
