@@ -1,25 +1,36 @@
 import React from 'react';
 import BigText from '../BigText';
+import './Home.css';
 import { TypeArticleProps } from '../PagesTemplate';
 
-// prettier-ignore
-const aboutDescription = (
+const explanation = (
   <>
-    Project WebFace is my frontend capstone portfolio, built via the Github Pages. <br />
-    WebFace is where I upload all my visual creations made throughout my high school years. <br />
-    The main tech stacks include: HTML, CSS, Typescript and React. <br />
-    It is continuously getting updated, so please bookmark this page if you are interested. <br />
-    Navigate to the other tabs to read more. Thank you!
+    Hi, I’m Jaehyuk. I am a current high school senior in Korea, interested in
+    various fields of software development — mainly <i>Full-stack Web </i> and
+    <i> Artificial Intelligence</i>. Whatever path you took to bring yourself
+    here, welcome to my WebFace. Feel free to look around!
   </>
 );
 
-const Home: React.FC<TypeArticleProps> = () => {
+const markDownMimic = (
+  <div className="markDown">
+    <p className="explanation">
+      import <span className="white">Highschool</span>,{' { '}
+      <span className="white"> math</span>,
+      <span className="white"> science </span> {' } '} from '
+      <span className="quote">/jeju/kisj/classOf2022</span>';
+    </p>
+  </div>
+);
+
+const Article: React.FC<TypeArticleProps> = props => {
   return (
     <>
-      <BigText title="Webface();" />
-      {aboutDescription}
+      {markDownMimic}
+      <BigText title="Jaehyuk.ryu();" />
+      {explanation}
     </>
   );
 };
 
-export default Home;
+export default Article;
