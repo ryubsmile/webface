@@ -16,7 +16,7 @@ export default function projectExplainer() {
             An Official Branch group of Amnesty Korea, the human rights
             Non-governmental Organization. The website itself is built entirely
             by the students in the group. My contributions to the development
-            include, but wasn't limited to: frontend design and structural
+            include, but weren't limited to: frontend design and structural
             improvement. You can find me on 'About'-'IT department.' I go by the
             name Jeff here. Please Check the website out by clicking the image!
           </div>
