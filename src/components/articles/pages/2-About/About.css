@@ -2,10 +2,10 @@
   font-family: 'Fira Code';
   font-style: normal;
   font-weight: 900;
-  src: url(../../fonts/FiraCode-Regular.ttf) format('ttf');
+  src: url(../../../../fonts/FiraCode-Regular.ttf) format('ttf');
 }
 
-.markDown{
+.markDown {
   position: absolute;
   background-color: #212121; /*#0F111A; */
   padding: 10px;
@@ -13,38 +13,36 @@
   width: max-content;
 }
 
-p.explanation{
+p.explanation {
   font-family: 'Courier New', 'Fira Code', Courier, monospace;
-  color: #89DDFF;
+  color: #89ddff;
   width: max-content;
   font-size: 11pt;
   line-height: 25px;
   word-break: break-all;
 }
 
-.white{
+.white {
   font: inherit;
-  color: #EDFFFF;/* #A6ACCD; */
+  color: #edffff; /* #A6ACCD; */
 }
 
-.quote{
+.quote {
   font: inherit;
-  color: #C3E88D;
+  color: #c3e88d;
 }
 
-
-@media(min-width: 1000px){
-  
+@media (min-width: 1000px) {
 }
 
-@media(max-width: 900px){
-  p.explanation{
-    width:77vw;
+@media (max-width: 900px) {
+  p.explanation {
+    width: 77vw;
     font-size: 10pt;
     /* font-size: 1.8vw; */
   }
 
-  .markDown{
+  .markDown {
     padding: 5px;
   }
 }

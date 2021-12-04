@@ -1,0 +1,29 @@
+.main-container {
+  position: relative;
+  margin-bottom: var(--custom-padding);
+}
+
+.slide-wrap {
+  position: relative;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.slide-box {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide-content {
+  display: table;
+  float: left;
+  width: 100%;
+  height: max-content;
+  margin-left: var(--custom-side-padding);
+  margin-right: var(--custom-side-padding);
+}
+
+.slide-list {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
