@@ -1,27 +1,31 @@
 {
   "files": {
     "main.css": "/webface/static/css/main.0f5c3c69.chunk.css",
-    "main.js": "/webface/static/js/main.3658e05b.chunk.js",
-    "main.js.map": "/webface/static/js/main.3658e05b.chunk.js.map",
+    "main.js": "/webface/static/js/main.f22ce10d.chunk.js",
+    "main.js.map": "/webface/static/js/main.f22ce10d.chunk.js.map",
     "runtime-main.js": "/webface/static/js/runtime-main.59e4d976.js",
     "runtime-main.js.map": "/webface/static/js/runtime-main.59e4d976.js.map",
-    "static/js/2.62ca53e9.chunk.js": "/webface/static/js/2.62ca53e9.chunk.js",
-    "static/js/2.62ca53e9.chunk.js.map": "/webface/static/js/2.62ca53e9.chunk.js.map",
+    "static/js/2.f75d5efd.chunk.js": "/webface/static/js/2.f75d5efd.chunk.js",
+    "static/js/2.f75d5efd.chunk.js.map": "/webface/static/js/2.f75d5efd.chunk.js.map",
     "index.html": "/webface/index.html",
     "static/css/main.0f5c3c69.chunk.css.map": "/webface/static/css/main.0f5c3c69.chunk.css.map",
-    "static/js/2.62ca53e9.chunk.js.LICENSE.txt": "/webface/static/js/2.62ca53e9.chunk.js.LICENSE.txt",
+    "static/js/2.f75d5efd.chunk.js.LICENSE.txt": "/webface/static/js/2.f75d5efd.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/webface/static/media/FiraCode-Regular.8b606aa9.ttf",
     "static/media/Website-Blur1.d377b5f8.png": "/webface/static/media/Website-Blur1.d377b5f8.png",
     "static/media/Website-Blur2.bf6d23ad.png": "/webface/static/media/Website-Blur2.bf6d23ad.png",
+    "static/media/code.7772f908.png": "/webface/static/media/code.7772f908.png",
     "static/media/email.92d23db9.svg": "/webface/static/media/email.92d23db9.svg",
     "static/media/github.b40b1c03.svg": "/webface/static/media/github.b40b1c03.svg",
+    "static/media/img1.c66f91eb.png": "/webface/static/media/img1.c66f91eb.png",
+    "static/media/img2.10100f70.png": "/webface/static/media/img2.10100f70.png",
     "static/media/instagram.f9d4dffb.svg": "/webface/static/media/instagram.f9d4dffb.svg",
-    "static/media/logo.22cbc994.png": "/webface/static/media/logo.22cbc994.png"
+    "static/media/logo.22cbc994.png": "/webface/static/media/logo.22cbc994.png",
+    "static/media/vid.0c29d677.png": "/webface/static/media/vid.0c29d677.png"
   },
   "entrypoints": [
     "static/js/runtime-main.59e4d976.js",
-    "static/js/2.62ca53e9.chunk.js",
+    "static/js/2.f75d5efd.chunk.js",
     "static/css/main.0f5c3c69.chunk.css",
-    "static/js/main.3658e05b.chunk.js"
+    "static/js/main.f22ce10d.chunk.js"
   ]
 }
