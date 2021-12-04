@@ -1,9 +1,13 @@
-import React from 'react';
 import BigText from '../BigText';
 import './Contact.css';
-import { TypeArticleProps } from '../PagesTemplate';
+import PropType from '../PagesTemplate';
 
-const Contact: React.FC<TypeArticleProps> = props => {
+// importing images
+import emailImg from './icons/email.svg';
+import githubImg from './icons/github.svg';
+import igImg from './icons/instagram.svg';
+
+export default function Contact(props: PropType) {
   //const name = props.name;
   return (
     <>
@@ -11,47 +15,46 @@ const Contact: React.FC<TypeArticleProps> = props => {
       <div className="contact-methods">{createMethodHTML}</div>
     </>
   );
-};
-
-export default Contact;
+}
 
 interface TypeMethod {
   name: string;
   href?: string;
-  orgnTxt: string;
-  hvrTxt?: string;
+  imgsrc?: string;
+  altTxt: string;
 }
 
 const contactMethods: TypeMethod[] = [
   {
     name: 'email',
     href: 'mailto:ryubsmile@gmail.com',
-    orgnTxt: 'EMAIL ME!',
-    hvrTxt: 'ryubsmile@gmail.com',
+    imgsrc: emailImg,
+    altTxt: 'EMAIL ME!',
   },
   {
     name: 'github',
     href: 'https://github.com/ryubsmile',
-    orgnTxt: 'GITHUB',
-    hvrTxt: 'ryubsmile',
+    imgsrc: githubImg,
+    altTxt: 'GITHUB',
   },
   {
-    name: 'TBD',
-    href: '/contact',
-    orgnTxt: 'To be added',
+    name: 'instagram',
+    href: 'https://www.instagram.com/ryubsmile/',
+    imgsrc: igImg,
+    altTxt: 'Instagram',
   },
 ];
+
+const size = '50px';
 
 const createMethodHTML: JSX.Element[] = contactMethods.map(
   (item: TypeMethod, index: number) => {
     return (
       <div className={'method ' + item.name} key={index}>
         <a href={item.href} target="_blank" rel="noopener noreferrer">
-          {item.orgnTxt}
+          <img height={size} width={size} src={item.imgsrc} alt={item.altTxt} />
         </a>
       </div>
     );
   }
 );
-
-//function changeText(this: HTMLAnchorElement, textToChange: string){ this.textContent = textToChange; };

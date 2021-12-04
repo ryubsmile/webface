@@ -1,14 +1,24 @@
-import React from 'react';
 import BigText from '../BigText';
 import './Home.css';
-import { TypeArticleProps } from '../PagesTemplate';
+import PropType from '../PagesTemplate';
 
+export default function Home(props: PropType) {
+  return (
+    <>
+      {markDownMimic}
+      <BigText title="Jaehyuk.ryu();" />
+      {explanation}
+    </>
+  );
+}
+
+//prettier-ignore
 const explanation = (
   <>
-    Hi, I’m Jaehyuk. I am a current high school senior in Korea, interested in
-    various fields of software development — mainly <i>Full-stack Web </i> and
+    Hi, I’m Jaehyuk. I am a current high school senior in Korea, interested in various fields of software development — mainly <i>Full-stack Web </i> and
     <i> Artificial Intelligence</i>. Whatever path you took to bring yourself
-    here, welcome to my WebFace. Feel free to look around!
+    here, welcome to my WebFace. <br /> <br />
+    I hope you enjoy your time on this website, so feel free to look around!
   </>
 );
 
@@ -22,15 +32,3 @@ const markDownMimic = (
     </p>
   </div>
 );
-
-const Article: React.FC<TypeArticleProps> = props => {
-  return (
-    <>
-      {markDownMimic}
-      <BigText title="Jaehyuk.ryu();" />
-      {explanation}
-    </>
-  );
-};
-
-export default Article;

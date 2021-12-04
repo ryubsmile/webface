@@ -1,0 +1,57 @@
+.container {
+  margin: 30px;
+  height: max-content;
+  background-color: black;
+  color: whitesmoke;
+}
+
+.proj-summary {
+  display: flex;
+  flex-direction: row;
+  height: max-content;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.container .div {
+  color: inherit;
+}
+
+.index-box {
+  background-color: #f8b304;
+  /* height: inherit; */
+  width: max-content;
+  min-width: 150px;
+  color: black;
+  padding: 20px 20px 25px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.index-box .num {
+  font-weight: bold;
+  color: inherit;
+  font-size: 30pt;
+}
+
+.index-box .sub {
+  color: rgb(56, 56, 56);
+}
+
+.exp-box .proj-title {
+  font-weight: 900;
+  font-size: 40pt;
+}
+
+.exp-box .proj-exp {
+  color: rgb(168, 168, 168);
+}
+
+.img-box {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+}
+
+.img-box .sample-img {
+  width: 49%;
+}

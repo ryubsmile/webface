@@ -3,10 +3,9 @@
  * has basic template for each page.
  */
 
-
 /**
  * Each page must explicitly connect this interface to the declaration.
  */
-export interface TypeArticleProps {
+export default interface TypeArticleProps {
   name: string;
 }

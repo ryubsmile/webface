@@ -1,19 +1,26 @@
-import React from 'react';
-import { ReactElement } from 'react';
 import './BigText.css';
 
 interface TypeProps {
   title: string;
 }
 
-const BigText: React.FC<TypeProps> = (props): ReactElement => {
-  let [title="NoTitleException e"] = [props.title];
-
+export default function BigText(props: TypeProps) {
+  let [title = 'NoTitleException e'] = [props.title];
   return (
     <div className="page-mask">
-      <h1 className="big-text">{title}</h1>
+      <h1 className="big-text">{syntaxHighlighter(title)}</h1>
     </div>
   );
-};
+}
 
-export default BigText;
+// splits a word into '.' and '()' and highlight them.
+const syntaxHighlighter = (text: String) =>
+  text.split(/(\.|\(\))/g).map((item, i) =>
+    item === '.' || item === '()' ? (
+      <span className="syntax-highlight" key={i}>
+        {item}
+      </span>
+    ) : (
+      <span key={i}>{item}</span>
+    )
+  );

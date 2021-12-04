@@ -5,27 +5,27 @@
 
 import React, { useState, useEffect } from 'react';
 import './Article.css';
-import { TypeArticleProps } from './pages/PagesTemplate';
+import PropType from './pages/PagesTemplate';
 
 let customSidePadding: number = 150; // pass as prop later on for responsive design
 const slideSpeed: number = 300; // milliseconds
 let isInitialLoad: number = 1;
 
 interface TypeProps {
-  pageList: React.ReactElement<TypeArticleProps>[];
+  pageList: React.ReactElement<PropType>[];
   slideIndex: number;
 }
 
-const Article: React.FC<TypeProps> = props => {
+export default function Article(props: TypeProps) {
   const [pageList, slideIndex] = [props.pageList, props.slideIndex]; //receive props
-
-  const [widths, setWidths] = useState({
-    containerWidth: 0,
-    slideWidth: 0,
-  });
+  //set up hooks
   const [slideHeight, setHeight] = useState(0);
+  const [widths, setWidths] = useState({
+    slideWidth: 0,
+    containerWidth: 0,
+  });
 
-  //on component update || mount
+  //on component mount || update
   useEffect(() => {
     const updateSlide = () => {
       updateWidths(setWidths);
@@ -41,7 +41,7 @@ const Article: React.FC<TypeProps> = props => {
         updateSlide();
       });
     };
-  }, [slideIndex]); // bind an empty array to prevent infinite rendering
+  }, [slideIndex]);
 
   function updateCss(width: number, slideIndex: number) {
     const css = {
@@ -62,7 +62,7 @@ const Article: React.FC<TypeProps> = props => {
 
   // create slides in the slides var
   let slides: JSX.Element[] = pageList.map(
-    (item: React.ReactElement<TypeArticleProps>, index: number) => {
+    (item: React.ReactElement<PropType>, index: number) => {
       return (
         <div
           className="slide-content"
@@ -92,9 +92,7 @@ const Article: React.FC<TypeProps> = props => {
       </div>
     </article>
   );
-};
-
-export default Article;
+}
 
 /* update and render width on every time resize event happens : width changes.*/
 function updateWidths(setWidths: React.Dispatch<any>): void {

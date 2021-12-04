@@ -1,6 +1,14 @@
-import React from 'react';
 import BigText from '../BigText';
-import { TypeArticleProps } from '../PagesTemplate';
+import PropType from '../PagesTemplate';
+
+export default function About(props: PropType) {
+  return (
+    <>
+      <BigText title="about();" />
+      {aboutDescription}
+    </>
+  );
+}
 
 // prettier-ignore
 const aboutDescription = (
@@ -12,14 +20,3 @@ const aboutDescription = (
     Navigate to the other tabs to read more. Thank you!
   </>
 );
-
-const Home: React.FC<TypeArticleProps> = () => {
-  return (
-    <>
-      <BigText title="Webface();" />
-      {aboutDescription}
-    </>
-  );
-};
-
-export default Home;

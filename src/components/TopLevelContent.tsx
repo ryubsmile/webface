@@ -4,16 +4,16 @@ import Article from './articles/Article';
 
 //-> article list start
 import Home from './articles/pages/0-Home/Home';
-import Works from './articles/pages/1-Works/Works';
-import About from './articles/pages/2-About/About';
-import Contact from './articles/pages/3-Contact/Contact';
-import { TypeArticleProps } from './articles/pages/PagesTemplate';
+import Works from './articles/pages/Works/Works';
+import About from './articles/pages/About/About';
+import Contact from './articles/pages/Contact/Contact';
+import PropType from './articles/pages/PagesTemplate';
 
 // add article to this object if adding one.
-const pageList: React.ReactElement<TypeArticleProps>[] = [
+const pageList: React.ReactElement<PropType>[] = [
   <Home name="Home" />,
-  <Works name="Works" />,
   <About name="About" />,
+  <Works name="Works" />,
   <Contact name="Contact" />,
 ];
 //<- article list end
@@ -40,6 +40,7 @@ const TopLevelContent: React.FC<TypeProps> = (props): ReactElement => {
   const [slideIndex, setSlideIndex] = useState<number>(
     urlDesiredSlideIndex || 0
   );
+
   return (
     <>
       <NavBar

@@ -1,0 +1,15 @@
+.contact-methods {
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+
+.method {
+  display: block;
+  text-decoration: none;
+  padding: 3px;
+  font-family: 'Courier New';
+  background-color: whitesmoke;
+  border-radius: 30%;
+}

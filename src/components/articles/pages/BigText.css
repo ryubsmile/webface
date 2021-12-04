@@ -1,10 +1,10 @@
-.page-mask{
+.page-mask {
   height: 250px;
   position: relative;
 }
 
-.big-text{
-  font-size:10vw;
+.big-text {
+  font-size: 10vw;
   position: absolute;
   bottom: 0px;
   margin: 0px;
@@ -12,22 +12,26 @@
   /* color: rgb(161, 0, 32); */
 }
 
-@media(min-width: 1350px){
-  .big-text{
+.syntax-highlight {
+  color: firebrick;
+}
+
+@media (min-width: 1350px) {
+  .big-text {
     font-size: 130px;
   }
 }
 
 /* tablet */
-@media(max-width: 900px){
-  .page-mask{
+@media (max-width: 900px) {
+  .page-mask {
     height: 24vw;
   }
 }
 
 /* phone */
-@media(max-width: 550px){
-  .page-mask{
+@media (max-width: 550px) {
+  .page-mask {
     height: 130px;
   }
 }

@@ -1,15 +1,16 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import './NavBar.css';
-import { TypeArticleProps } from '../articles/pages/PagesTemplate';
+import PropType from '../articles/pages/PagesTemplate';
+import logoImg from './logo.png';
 
 interface TypeProps {
   defaultURL: string;
-  pageList: React.ReactElement<TypeArticleProps>[];
+  pageList: React.ReactElement<PropType>[];
   slideIndex: number;
   setSlideIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const NavBar: React.FC<TypeProps> = (props): ReactElement => {
+export default function NavBar(props: TypeProps) {
   const [defaultURL, pageList, slideIndex, setSlideIndex] = [
     props.defaultURL,
     props.pageList,
@@ -55,7 +56,8 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
             className={
               i === slideIndex ? 'nav-item active' : 'nav-item inactive'
             }
-            src="images/icon2.png"
+            // src="images/icon2.png"
+            src={logoImg}
             alt="OOPS! REFRESH!"
           />
         </button>
@@ -83,9 +85,7 @@ const NavBar: React.FC<TypeProps> = (props): ReactElement => {
       </div>
     </header>
   );
-};
-
-export default NavBar;
+}
 
 // update height according to the selected slide
 function updateHeight(indexToGetHeight: number): void {
