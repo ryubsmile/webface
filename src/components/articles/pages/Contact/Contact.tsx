@@ -1,4 +1,4 @@
-import BigText from '../BigText';
+import PageIntro from '../PageIntro';
 import './Contact.css';
 import PropType from '../PagesTemplate';
 
@@ -11,7 +11,16 @@ export default function Contact(props: PropType) {
   //const name = props.name;
   return (
     <>
-      <BigText title="contact();" />
+      <PageIntro
+        title="contact();"
+        sub={
+          <>
+            If you are interested, contact me! Email is the most preferred way
+            to do so.
+          </>
+        }
+      />
+      <br />
       <div className="contact-methods">{createMethodHTML}</div>
     </>
   );
@@ -45,16 +54,12 @@ const contactMethods: TypeMethod[] = [
   },
 ];
 
-const size = '50px';
-
 const createMethodHTML: JSX.Element[] = contactMethods.map(
-  (item: TypeMethod, index: number) => {
-    return (
-      <div className={'method ' + item.name} key={index}>
-        <a href={item.href} target="_blank" rel="noopener noreferrer">
-          <img height={size} width={size} src={item.imgsrc} alt={item.altTxt} />
-        </a>
-      </div>
-    );
-  }
+  (item: TypeMethod, index: number) => (
+    <div className={'method ' + item.name} key={index}>
+      <a href={item.href} target="_blank" rel="noopener noreferrer">
+        <img src={item.imgsrc} alt={item.altTxt} />
+      </a>
+    </div>
+  )
 );

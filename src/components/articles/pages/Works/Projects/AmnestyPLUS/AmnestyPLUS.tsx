@@ -7,8 +7,10 @@ export default function projectExplainer() {
     <div className="container">
       <div className="proj-summary">
         <div className="index-box">
-          <div className="num">01</div>
-          <div className="sub">WEBSITE</div>
+          <div className="center">
+            <div className="num">01</div>
+            <div className="sub">WEBSITE</div>
+          </div>
         </div>
         <div className="exp-box">
           <div className="proj-title">Amnesty PLUS</div>

@@ -4,7 +4,7 @@
 }
 
 .big-text {
-  font-size: 10vw;
+  font-size: 10.5vw;
   position: absolute;
   bottom: 0px;
   margin: 0px;
@@ -16,7 +16,7 @@
   color: firebrick;
 }
 
-@media (min-width: 1350px) {
+@media (min-width: 1100px) {
   .big-text {
     font-size: 130px;
   }
@@ -25,7 +25,7 @@
 /* tablet */
 @media (max-width: 900px) {
   .page-mask {
-    height: 24vw;
+    height: 25vw;
   }
 }
 

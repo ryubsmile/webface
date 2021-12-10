@@ -1,4 +1,4 @@
-import BigText from '../BigText';
+import PageIntro from '../PageIntro';
 import './Works.css';
 import PropType from '../PagesTemplate';
 import Amnesty from './Projects/AmnestyPLUS/AmnestyPLUS';
@@ -8,8 +8,7 @@ import Arduino from './Projects/ArduinoRC/ArduinoRC';
 export default function Works(props: PropType) {
   return (
     <>
-      <BigText title="works();" />
-      <div>{explanation}</div>
+      <PageIntro title="works();" sub={explanation} />
       <br />
       <br />
       <hr className="divider" />

@@ -8,7 +8,11 @@ export default function projectExplainer() {
       <div className="proj-summary">
         <div className="index-box">
           <div className="num">02</div>
-          <div className="sub">MACHINE-LEARNING</div>
+          <div className="sub">
+            MACHINE
+            <br />
+            LEARNING
+          </div>
         </div>
         <div className="exp-box">
           <div className="proj-title">Spotify Song Recommender</div>
