@@ -81,5 +81,6 @@ h3.me-explanation {
 @media (max-width: 900px) {
   * {
     --custom-side-padding: 13vw;
+    /* --custom-side-padding: 130px; */
   }
 }

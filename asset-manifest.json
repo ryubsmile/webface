@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/webface/static/css/main.0f5c3c69.chunk.css",
-    "main.js": "/webface/static/js/main.2b70e530.chunk.js",
-    "main.js.map": "/webface/static/js/main.2b70e530.chunk.js.map",
+    "main.css": "/webface/static/css/main.8f4a9d0f.chunk.css",
+    "main.js": "/webface/static/js/main.5b73c71e.chunk.js",
+    "main.js.map": "/webface/static/js/main.5b73c71e.chunk.js.map",
     "runtime-main.js": "/webface/static/js/runtime-main.59e4d976.js",
     "runtime-main.js.map": "/webface/static/js/runtime-main.59e4d976.js.map",
     "static/js/2.f75d5efd.chunk.js": "/webface/static/js/2.f75d5efd.chunk.js",
     "static/js/2.f75d5efd.chunk.js.map": "/webface/static/js/2.f75d5efd.chunk.js.map",
     "index.html": "/webface/index.html",
-    "static/css/main.0f5c3c69.chunk.css.map": "/webface/static/css/main.0f5c3c69.chunk.css.map",
+    "static/css/main.8f4a9d0f.chunk.css.map": "/webface/static/css/main.8f4a9d0f.chunk.css.map",
     "static/js/2.f75d5efd.chunk.js.LICENSE.txt": "/webface/static/js/2.f75d5efd.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/webface/static/media/FiraCode-Regular.8b606aa9.ttf",
     "static/media/Website-Blur1.d377b5f8.png": "/webface/static/media/Website-Blur1.d377b5f8.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.59e4d976.js",
     "static/js/2.f75d5efd.chunk.js",
-    "static/css/main.0f5c3c69.chunk.css",
-    "static/js/main.2b70e530.chunk.js"
+    "static/css/main.8f4a9d0f.chunk.css",
+    "static/js/main.5b73c71e.chunk.js"
   ]
 }
