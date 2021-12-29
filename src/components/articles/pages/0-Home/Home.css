@@ -7,6 +7,7 @@
 
 .markDown {
   position: absolute;
+  bottom: -70px;
   background-color: #212121; /*#0F111A; */
   padding: 10px;
   border-radius: 5px;
@@ -43,6 +44,6 @@ p.explanation {
   }
 
   .markDown {
-    padding: 5px;
+    display: none;
   }
 }

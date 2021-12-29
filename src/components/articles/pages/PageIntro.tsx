@@ -7,7 +7,7 @@ interface TypeProps {
 }
 
 export default function PageIntro(props: TypeProps) {
-  let [title = 'NoTitleException e', sub] = [props.title, props.sub];
+  const [title = 'NoTitleException e', sub] = [props.title, props.sub];
   return (
     <>
       <div className="page-mask">

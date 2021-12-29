@@ -97,9 +97,9 @@ export default function Article(props: TypeProps) {
 /* update and render width on every time resize event happens : width changes.*/
 function updateWidths(setWidths: React.Dispatch<any>): void {
   const clientWidth = document.body.clientWidth;
-  //@media(max-width: 900px) 13vw
+  //@media(max-width: 900px) 10vw
   const sidePaddingResponsive =
-    clientWidth > 900 ? customSidePadding : clientWidth * 0.13;
+    clientWidth > 900 ? customSidePadding : clientWidth * 0.1;
   setWidths({
     containerWidth: clientWidth,
     slideWidth: clientWidth - sidePaddingResponsive * 2,
