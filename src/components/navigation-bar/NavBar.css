@@ -10,7 +10,7 @@ header.nav {
 
 .nav button {
   text-decoration: none;
-  background-color: black;
+  background-color: transparent;
   border: 0;
   padding: 0;
 }
