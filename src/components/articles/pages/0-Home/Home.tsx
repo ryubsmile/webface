@@ -14,10 +14,10 @@ export default function Home(props: PropType) {
 //prettier-ignore
 const explanation = (
   <>
-    Hi, I’m Jaehyuk. I am a current high school senior in Korea, interested in various fields of software development — mainly <b><i>Full-stack Web </i></b> and
-    <b><i> Artificial Intelligence</i></b>. Whatever path you took to bring yourself
-    here, welcome to my WebFace. <br /> <br />
-    I hope you enjoy your time on this website, so feel free to look around!
+    Hi, I’m Jaehyuk. I am a freshman in the University of Toronto, interested in various fields of software development — mainly <b><i>Full-stack Web </i></b> and
+    <b><i> Artificial Intelligence</i></b>. Whatever path it took for you to bring yourself
+    here, welcome to my WebFace! <br /> <br />
+    Feel free to look around, although at this point there's not much here 😅
   </>
 );
 

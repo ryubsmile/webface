@@ -24,7 +24,7 @@ export default function Works(props: PropType) {
 
 const explanation = (
   <>
-    A list of all my individual/group projects I worked as the software
-    designer. Click each banner and you will be able to look for more details.
+    A list of all my individual/group projects I worked as a software designer.
+    Click on the photos and you can look for more details in Github.
   </>
 );
