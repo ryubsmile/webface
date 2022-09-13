@@ -24,10 +24,10 @@ const explanation = (
 const markDownMimic = (
   <div className="markDown">
     <p className="explanation">
-      import <span className="white">Highschool</span>,{' { '}
-      <span className="white"> math</span>,
-      <span className="white"> science </span> {' } '} from '
-      <span className="quote">/jeju/kisj/classOf2022</span>';
+      import <span className="white"> Year 1 </span>,{' { '}
+      <span className="white"> Stats </span>,
+      <span className="white"> Computer Science </span> {' } '} from '
+      <span className="quote">/Canada/Toronto/UofT/</span>';
     </p>
   </div>
 );
